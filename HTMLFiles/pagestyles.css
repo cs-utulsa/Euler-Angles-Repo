@@ -1,0 +1,17 @@
+.column {
+    float: left;
+    width: 50%;
+}
+
+.numin {
+	width: 70px;
+}
+
+td {
+   	padding-left: 15px;
+   	padding-right: 15px;
+}
+
+.matrix {
+	width: 35px;
+}
