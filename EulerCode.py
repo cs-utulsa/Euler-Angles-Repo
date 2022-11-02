@@ -11,8 +11,8 @@ while (passed):
     or rotationSel == 'xzx' or rotationSel == 'yxy' or rotationSel == 'xyz' or rotationSel == 'yzx'
     or rotationSel == 'zxy' or rotationSel == 'xzy' or rotationSel == 'zyx' or rotationSel == 'yxz'):
         passed=False
-else:
-    print("Try Again! Wrong Input")
+    else:
+        print("Try Again! Wrong Input")
 
 Rot = R.from_euler(rotationSel, [xinput, yinput, zinput], degrees=True)
 
