@@ -12,7 +12,7 @@
         <ul>
             <li><a href="/">Home</a></li>
             <li><a href="/converter">Converter</a></li>
-            <li><a href="/help">Help</a></li>
+            <li><a href="/help">Help</a></li>ç
 
         </ul>
     </table>
@@ -25,31 +25,32 @@
             <h2>Euler Angle</h2>
 
             <!-- This form section is where the data is collected, not sure how to integrate it with submission and all that-->
-            <form>
+            <form method = 'POST' action = "{{  url_for('euler') }}">
                 <table>
                     <tr>
-                        <td>x <input type="number" class="numin"></td>
-                        <td>y <input type="number" class="numin"></td>
-                        <td>z <input type="number" class="numin"></td>
+                        <td>x <input type="text" name = "x" placeholder = "x value" required = "required" /></td>
+                        <td>y <input type="text" name = "y" placeholder = "y value" required = "required" /></td>
+                        <td>z <input type="text" name = "z" placeholder = "z value" required = "required" /></td>
+                        
                     </tr>
                 </table>
                 <h2>Rotation Type</h2>
                 <table>
                     <tr>
-                        <td><label><input type="radio" name="rotation" checked>xyz</label></td>
-                        <td><label><input type="radio" name="rotation">yzx</label></td>
-                        <td><label><input type="radio" name="rotation">zxy</label></td>
-                        <td><label><input type="radio" name="rotation">xzy</label></td>
-                        <td><label><input type="radio" name="rotation">zyx</label></td>
-                        <td><label><input type="radio" name="rotation">yxz</label></td>
+                        <td><label><input type="radio" name="rotation" value="xyz" checked>xyz</label></td>
+                        <td><label><input type="radio" name="rotation" value="yzx">yzx</label></td>
+                        <td><label><input type="radio" name="rotation" value="zxy">zxy</label></td>
+                        <td><label><input type="radio" name="rotation" value="xzy">xzy</label></td>
+                        <td><label><input type="radio" name="rotation" value="zyx">zyx</label></td>
+                        <td><label><input type="radio" name="rotation" value="yxz">yxz</label></td>
                     </tr>
                     <tr>
-                        <td><label><input type="radio" name="rotation">zxz</label></td>
-                        <td><label><input type="radio" name="rotation">xyx</label></td>
-                        <td><label><input type="radio" name="rotation">yzy</label></td>
-                        <td><label><input type="radio" name="rotation">zyz</label></td>
-                        <td><label><input type="radio" name="rotation">xzx</label></td>
-                        <td><label><input type="radio" name="rotation">yxy</label></td>
+                        <td><label><input type="radio" name="rotation" value="zxz">zxz</label></td>
+                        <td><label><input type="radio" name="rotation" value="xyx">xyx</label></td>
+                        <td><label><input type="radio" name="rotation" value="yzy">yzy</label></td>
+                        <td><label><input type="radio" name="rotation" value="zyz">zyz</label></td>
+                        <td><label><input type="radio" name="rotation" value="xzx">xzx</label></td>
+                        <td><label><input type="radio" name="rotation" value="yxy">yxy</label></td>
                     </tr>
                 </table>
                 <h2>Quaternion Angle</h2>
@@ -80,11 +81,13 @@
                         <td><input type="number" class="matrix"></td>
                     </tr>
                 </table>
+                <button type="submit" class="btn btn-primary btn-block btn-large">Calculate</button>
             </form>
+            {{ calculation }}
         </div>
         <div class="column">
             <p>placeholder image below</p>
-            <img src="https://learninginnovation.duke.edu/wp-content/uploads/2020/11/matlab.png">
+            
             <div>
 
                 <!-- This should be where the Jupiter representation goes -->
