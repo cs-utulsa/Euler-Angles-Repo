@@ -30,12 +30,10 @@ print(rotationMatrix) #formatted rotation matrix
 
 startPoint1 = np.array([[0], [0], [0], [0]])
 startPoint2 = np.array([[1], [0], [0], [0]])
-startPoint3 = np.array([[0], [0], [1], [0]])
-startPoint4 = np.array([[1], [0], [1], [0]])
-startPoint5 = np.array([[0], [1], [0], [0]])
-startPoint6 = np.array([[1], [1], [0], [0]])
-startPoint7 = np.array([[0], [1], [1], [0]])
-startPoint8 = np.array([[1], [1], [1], [0]])
+startPoint3 = np.array([[1], [0], [1], [0]])
+startPoint4 = np.array([[0], [0], [1], [0]])
+startPoint5 = np.array([[0], [0], [0], [0]])
+
 
 print("Position1:")
 print(startPoint1)
@@ -93,36 +91,6 @@ posTrans5 = np.array([[1,0,0,startPoint5[0,0]],
                      [0,0,1,startPoint5[2,0]],
                      [0,0,0,1]])
 
-negTrans6 = np.array([[1,0,0,-startPoint6[0,0]],
-                     [0,1,0,-startPoint6[1,0]],
-                     [0,0,1,-startPoint6[2,0]],
-                     [0,0,0,1]])
-
-posTrans6 = np.array([[1,0,0,startPoint6[0,0]],
-                     [0,1,0,startPoint6[1,0]],
-                     [0,0,1,startPoint6[2,0]],
-                     [0,0,0,1]])
-
-negTrans7 = np.array([[1,0,0,-startPoint7[0,0]],
-                     [0,1,0,-startPoint7[1,0]],
-                     [0,0,1,-startPoint7[2,0]],
-                     [0,0,0,1]])
-
-posTrans7 = np.array([[1,0,0,startPoint7[0,0]],
-                     [0,1,0,startPoint7[1,0]],
-                     [0,0,1,startPoint7[2,0]],
-                     [0,0,0,1]])
-
-negTrans8 = np.array([[1,0,0,-startPoint8[0,0]],
-                     [0,1,0,-startPoint8[1,0]],
-                     [0,0,1,-startPoint8[2,0]],
-                     [0,0,0,1]])
-
-posTrans8 = np.array([[1,0,0,startPoint8[0,0]],
-                     [0,1,0,startPoint8[1,0]],
-                     [0,0,1,startPoint8[2,0]],
-                     [0,0,0,1]])
-
 
 moveToOrigin = np.matmul(negTrans1, startPoint1)
 rotate = np.matmul(rotationMatrix,moveToOrigin)
@@ -144,17 +112,6 @@ moveToOrigin = np.matmul(negTrans5, startPoint5)
 rotate = np.matmul(rotationMatrix,moveToOrigin)
 finalPos5 = np.matmul(posTrans5, rotate)
 
-moveToOrigin = np.matmul(negTrans6, startPoint6)
-rotate = np.matmul(rotationMatrix,moveToOrigin)
-finalPos6 = np.matmul(posTrans6, rotate)
-
-moveToOrigin = np.matmul(negTrans7, startPoint7)
-rotate = np.matmul(rotationMatrix,moveToOrigin)
-finalPos7 = np.matmul(posTrans7, rotate)
-
-moveToOrigin = np.matmul(negTrans8, startPoint8)
-rotate = np.matmul(rotationMatrix,moveToOrigin)
-finalPos8 = np.matmul(posTrans8, rotate)
 
 print("Position1 Rotated:")
 print(finalPos1)
@@ -170,14 +127,6 @@ print(finalPos4)
 print("Position5 Rotated:")
 print(finalPos5)
 print()
-print("Position6 Rotated:")
-print(finalPos6)
-print()
-print("Position7 Rotated:")
-print(finalPos7)
-print()
-print("Position8 Rotated:")
-print(finalPos8)
 
 # Rot_quat = Rot.as_quat()
 
@@ -187,29 +136,22 @@ print(finalPos8)
 fig = plt.figure()
 ax = fig.add_subplot(111, projection='3d')
 # ax.scatter(startPoint1[0,0], startPoint1[1,0], startPoint1[2,0], c='red', s=10)
-# ax.scatter(startPoint2[0,0], startPoint2[1,0], startPoint2[2,0], c='red', s=10)
-# ax.scatter(startPoint3[0,0], startPoint3[1,0], startPoint3[2,0], c='red', s=10)
-# ax.scatter(startPoint4[0,0], startPoint4[1,0], startPoint4[2,0], c='red', s=10)
-# ax.scatter(startPoint5[0,0], startPoint5[1,0], startPoint5[2,0], c='red', s=10)
-# ax.scatter(startPoint6[0,0], startPoint6[1,0], startPoint6[2,0], c='red', s=10)
-# ax.scatter(startPoint7[0,0], startPoint7[1,0], startPoint7[2,0], c='red', s=10)
-# ax.scatter(startPoint8[0,0], startPoint8[1,0], startPoint8[2,0], c='red', s=10)
-ax.scatter(finalPos1[0,0], finalPos1[1,0], finalPos1[2,0], c='blue', s=10)
-xData = [startPoint1[0,0], startPoint2[0,0], startPoint3[0,0], startPoint4[0,0], startPoint5[0,0], startPoint6[0,0], startPoint7[0,0], startPoint8[0,0]]
-yData =[startPoint1[1,0], startPoint2[1,0], startPoint3[1,0], startPoint4[1,0], startPoint5[1,0], startPoint6[1,0], startPoint7[1,0], startPoint8[1,0]]
-zData =[startPoint1[2,0], startPoint2[2,0], startPoint3[2,0], startPoint4[2,0], startPoint5[2,0], startPoint6[2,0], startPoint7[2,0], startPoint8[2,0]]
-xFinalData = [finalPos1[0,0], finalPos2[0,0], finalPos3[0,0], finalPos4[0,0], finalPos5[0,0], finalPos6[0,0], finalPos7[0,0], finalPos8[0,0]]
-yFinalData =[finalPos1[1,0], finalPos2[1,0], finalPos3[1,0], finalPos4[1,0], finalPos5[1,0], finalPos6[1,0], finalPos7[1,0], finalPos8[1,0]]
-zFinalData =[finalPos1[2,0], finalPos2[2,0], finalPos3[2,0], finalPos4[2,0], finalPos5[2,0], finalPos6[2,0], finalPos7[2,0], finalPos8[2,0]]
-ax.scatter(xData, yData, zData, c='red', s=100)
+# ax.scatter(finalPos1[0,0], finalPos1[1,0], finalPos1[2,0], c='blue', s=10)
+xData = [startPoint1[0,0], startPoint2[0,0], startPoint3[0,0], startPoint4[0,0], startPoint5[0,0]]
+yData =[startPoint1[1,0], startPoint2[1,0], startPoint3[1,0], startPoint4[1,0], startPoint5[1,0]]
+zData =[startPoint1[2,0], startPoint2[2,0], startPoint3[2,0], startPoint4[2,0], startPoint5[2,0]]
+xFinalData = [finalPos1[0,0], finalPos2[0,0], finalPos3[0,0], finalPos4[0,0], finalPos5[0,0]]
+yFinalData =[finalPos1[1,0], finalPos2[1,0], finalPos3[1,0], finalPos4[1,0], finalPos5[1,0]]
+zFinalData =[finalPos1[2,0], finalPos2[2,0], finalPos3[2,0], finalPos4[2,0], finalPos5[2,0]]
+ax.scatter(xData, yData, zData, c='red', s=10)
 ax.plot(xData, yData, zData, color='black')
-ax.scatter(xFinalData, yFinalData, zFinalData, c='blue', s=100)
+ax.scatter(xFinalData, yFinalData, zFinalData, c='blue', s=10)
 ax.plot(xFinalData, yFinalData, zFinalData, color='black')
 ax.set_xticks([-4,-2,0,2,4])
 ax.set_yticks([-4,-2,0,2,4])
 ax.set_zticks([-4,-2,0,2,4])
-for angle in range(0, 360):
-    ax.view_init(30, angle)
-    plt.draw()
-    plt.pause(.001)
-
+# for angle in range(0, 360):
+#     ax.view_init(30, angle)
+#     plt.draw()
+#     plt.pause(.001)
+plt.show()
