@@ -2,9 +2,6 @@ from flask import Flask, render_template, request
 app = Flask(__name__)
 
 import help as h
-from scipy.spatial.transform import Rotation as R
-import numpy as np
-from matplotlib import pyplot as plt
 
 app.config['TESTING'] = True
 

@@ -1,73 +1,81 @@
-/** nivagiation bar **/
-ul {
-	list-style-type: none;
-	margin: 0;
-	padding: 0;
-	overflow: hidden;
-	background-color: #333;
-	position: fixed;
-	top: 0;
-	width: 100%;
-}
-
-li {
-	float: left;
-	border-right: 1px solid #bbb;
-}
-
-li a {
-	display: block;
-	color: white;
-	text-align: center;
-	padding: 14px 16px;
-	text-decoration: none;
-}
-
-/*change color when mouse on it */
-li a:hover {
-	background-color: #111;
-}
-
-li:last-child {
-	border-right: none;
-}
-
-
 .column {
-    float: left;
-    width: 50%;
+	float: left;
+	width: 46%;
+	padding-left: 2%;
+	padding-right: 2%;
+}
+
+
+.taskbar {
+	overflow: hidden;
+	background-color: #FFF;
+	margin-bottom: 20px;
+}
+
+.taskbar a {
+	float: left;
+	color: #000;
+	text-align: center;
+	padding: 10px 12px;
+	text-decoration: none;
+	font-size: 15px;
+}
+
+.taskbar a.active {
+	background-color: #0F74E0;
+	color: white;
+}
+
+.taskbar a:hover {
+  background-color: #0F74E0;
+  color: white;
+}
+
+.onecolumn {
+	width: 96%;
+	padding-left: 2%;
+	padding-right: 2%;
+}
+
+body {
+	background-color: #0F74E0;
+	margin: 0px;
 }
 
 .numin {
 	width: 70px;
 }
 
+/* perhaps go by a px basis */
+
+.sectionholder {
+	padding: 1px 5px 5px 10px;
+	background-color: #FFFFFF;
+	border: 2px solid #073261;
+	border-radius: 10px;
+	margin-bottom: 10px;
+}
+
+.holder {
+	padding: 1px 5px 20px 10px;
+	background-color: #FFFFFF;
+	border: 2px solid #073261;
+	border-radius: 10px;
+	margin-bottom: 10px;
+
+}
+
 td {
-   	padding-left: 15px;
-   	padding-right: 15px;
+	padding-left: 15px;
+	padding-right: 15px;
 }
 
 .matrix {
 	width: 35px;
 }
 
-.controls {
-	padding-top: 1rem;
-	display: grid;
-	grid-template-rows: repeat(3, 1fr);
-	grid-template-columns: 1fr 2fr;
-	gap: .7rem;
-}
-
-label {
-	font-size: .8rem;
-	justify-self: end;
-}
-
-
-
-input[type='reset'] {
-	grid-column: 2;
-	grid-row: 2;
-
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
 }
