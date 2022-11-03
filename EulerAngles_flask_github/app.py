@@ -36,8 +36,10 @@ def euler():
         display = ep.eulerToQuat(x, y, z, rot)
         matrix = np.ndarray.tolist(ep.rotArray(x, y, z, rot))
         matrix = h.truncate(matrix)
+        print(matrix)
         return render_template('EulerToQuaternion.html', mat = matrix ,
         calculation = np.ndarray.tolist(result), pict = "data:image/png;base64," + display)
+
     return render_template('EulerToQuaternion.html', mat = matrix, calculation = result, pict = "data:image/png;base64," + display)
 
 

@@ -5,7 +5,8 @@ def add(a ,b, c):
 
 def truncate(ls):
     for i in ls:
-        i = ['%.2f' % elem for elem in i]
+        for j in i :
+            np.round(j, 2)
     return ls
 
 
