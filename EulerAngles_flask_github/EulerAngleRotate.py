@@ -123,9 +123,9 @@ def initialImage():
     zData =[startPoint1[2,0], startPoint2[2,0], startPoint3[2,0], startPoint4[2,0], startPoint5[2,0]]
     ax.scatter(xData, yData, zData, c='red', s=10)
     ax.plot(xData, yData, zData, color='black')
-    ax.set_xticks([-4,-2,0,2,4])
-    ax.set_yticks([-4,-2,0,2,4])
-    ax.set_zticks([-4,-2,0,2,4])
+    ax.set_xticks([-2,-1,0,1,2])
+    ax.set_yticks([-2,-1,0,1,2])
+    ax.set_zticks([-2,-1,0,1,2])
     buf = BytesIO()
     fig.savefig(buf, format="png")
     data = base64.b64encode(buf.getbuffer()).decode("ascii")
