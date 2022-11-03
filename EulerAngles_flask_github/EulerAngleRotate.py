@@ -113,6 +113,16 @@ def eulerToQuat(x, y, z, rotationSel):
 def initialImage():
     fig = Figure()
     ax = fig.add_subplot(111, projection='3d')
+    startPoint1 = np.array([[0], [0], [0], [0]])
+    startPoint2 = np.array([[1], [0], [0], [0]])
+    startPoint3 = np.array([[1], [0], [1], [0]])
+    startPoint4 = np.array([[0], [0], [1], [0]])
+    startPoint5 = np.array([[0], [0], [0], [0]])
+    xData = [startPoint1[0,0], startPoint2[0,0], startPoint3[0,0], startPoint4[0,0], startPoint5[0,0]]
+    yData =[startPoint1[1,0], startPoint2[1,0], startPoint3[1,0], startPoint4[1,0], startPoint5[1,0]]
+    zData =[startPoint1[2,0], startPoint2[2,0], startPoint3[2,0], startPoint4[2,0], startPoint5[2,0]]
+    ax.scatter(xData, yData, zData, c='red', s=10)
+    ax.plot(xData, yData, zData, color='black')
     ax.set_xticks([-4,-2,0,2,4])
     ax.set_yticks([-4,-2,0,2,4])
     ax.set_zticks([-4,-2,0,2,4])
