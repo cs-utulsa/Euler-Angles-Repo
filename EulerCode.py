@@ -1,6 +1,9 @@
 from scipy.spatial.transform import Rotation as R
 import numpy as np
 from matplotlib import pyplot as plt
+from matplotlib.figure import Figure
+from io import BytesIO
+import base64
 xinput = input("Enter your X value: ")
 yinput = input("Enter your Y value: ")
 zinput = input("Enter your Z value: ")
@@ -133,7 +136,8 @@ print()
 # print("Quaternion Matrix:")
 # print(Rot_quat)
 
-fig = plt.figure()
+# fig = plt.figure()
+fig = Figure()
 ax = fig.add_subplot(111, projection='3d')
 # ax.scatter(startPoint1[0,0], startPoint1[1,0], startPoint1[2,0], c='red', s=10)
 # ax.scatter(finalPos1[0,0], finalPos1[1,0], finalPos1[2,0], c='blue', s=10)
@@ -154,4 +158,7 @@ ax.set_zticks([-4,-2,0,2,4])
 #     ax.view_init(30, angle)
 #     plt.draw()
 #     plt.pause(.001)
-plt.show()
+buf = BytesIO()
+fig.savefig(buf, format="png")
+data = base64.b64encode(buf.getbuffer()).decode("ascii")
+
