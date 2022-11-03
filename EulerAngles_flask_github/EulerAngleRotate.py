@@ -109,3 +109,14 @@ def eulerToQuat(x, y, z, rotationSel):
     fig.savefig(buf, format="png")
     data = base64.b64encode(buf.getbuffer()).decode("ascii")
     return data
+
+def initialImage():
+    fig = Figure()
+    ax = fig.add_subplot(111, projection='3d')
+    ax.set_xticks([-4,-2,0,2,4])
+    ax.set_yticks([-4,-2,0,2,4])
+    ax.set_zticks([-4,-2,0,2,4])
+    buf = BytesIO()
+    fig.savefig(buf, format="png")
+    data = base64.b64encode(buf.getbuffer()).decode("ascii")
+    return data
