@@ -1,33 +1,46 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="/static/CSS/pagestyles.css" rel="stylesheet"/>
-    <title>Home</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="pagestyles.css" rel="stylesheet"/>
+	<title>Home</title>
+	<link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
-<header>
-    <table>
-        <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/converter">Converter</a></li>
-            <li><a href="/help">Help</a></li>
+	<header>
+		<div class="taskbar">
+			<a class="active" href="home.html">Home</a>
+			<a href="EulerToQuaternion.html">Converter</a>
+			<a href="help.html">Help</a>
+		</div>
+	</header>
 
-        </ul>
-    </table>
-    <hr>
-    <h1>Home</h1>
-</header>
+	<main>
+		
+		<div class="row">
+			<div class="onecolumn">
+				<div class="sectionholder">
+					<h1 align="center">Welcome to EulerConversions!</h1>
+				</div>
+			</div>
+		</div>
 
-<main>
-    <div class="row">
-        <div class="column">
-            <p>This is our thorough website on Euler to Quaternion angles,
-                with helpful descriptions on proper usage of our converter.</p>
+		<div class="row">
+			<div class="column">
+				<div class="holder">
+					<p>This web application provides a calculator for making conversions from Euler Angles to their rotation matrices and to quaternions. Along with these conversions is a graph that shows the 3D rotations. Click the Converter tab above to navigate to the calculator and graph.</p>
+					<p>Since 3D rotation and quaternions can be complex topics to understand, we have provided a page of information about these topics. This learning center includes the links to additional resources that were helpful for our team in learning more about 3D rotation. To navigate to this page, click on the Help tab above. </p>
+				</div>
+			</div>
+			<div class="column">
+				<div class="holder" align="center">
+					<br>
+					<img width="410" height="410" src="https://drive.google.com/uc?export=view&id=179ZxcAYahvoDRiiodGOUEPmLVJdirDyh">
+				</div>
+			</div>
+		</div>
 
-        </div>
-    </div>
-</main>
+	</main>
 </body>
 </html>

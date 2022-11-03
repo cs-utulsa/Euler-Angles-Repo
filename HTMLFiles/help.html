@@ -4,22 +4,120 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href="pagestyles.css" rel="stylesheet"/>
+	<link rel="icon" type="image/x-icon" href="favicon.ico">
 	<title>Help</title>
+
+	<!-- MathJax script for rendering LaTeX math representation-->
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+	<script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 </head>
 <body>
 	<header>
-		<table>
-				<tr>
-					<td><a href="home.html">Home</a></td>
-					<td><a href="EulerToQuaternion.html">Converter</a></td>
-					<td><a href="help.html">Help</a></td>
-				</tr>
-			</table>
-			<hr>
-		<h1>Help</h1>
+		<div class="taskbar">
+			<a href="home.html">Home</a>
+			<a href="EulerToQuaternion.html">Converter</a>
+			<a class="active" href="help.html">Help</a>
+		</div>
 	</header>
 	<main>
-		<p>This is the help section for Euler to Quaternion angles.</p>
+		<div class="row">
+			<div class="onecolumn">
+				<div class="sectionholder">
+					<h1 align="center">Help</h1>
+				</div>
+			</div>
+
+			<div class="onecolumn">
+				<div class="holder">
+					<h2>Quaternions</h2>
+					<p>Quaternions are a 4-dimensional number system such that each quaternion consists of a scalar component and an imaginary vector component. They are an extension of complex numbers in that the vector components \((i, j, k)\) follow the equation \(i^2=j^2=k^2=ijk=-1\) and each of the three units of the vector component represent an imaginary dimension. Putting this vector with the scalar component gives a four number representation for a quaternion, \(q\), where \(q=q_{0}+iq_{1}+jq_{2}+kq_{3}\). While the number system represented by quaternions is not commonly used, it is particularly helpful in describing 3D rotation. More information is given below about its use in 3D rotation.</p>
+					<p>For a visual way to learn more about quaternions, see the following video: <a target="_blank" href="https://www.youtube.com/watch?v=d4EgbgTm0Bg&t=1669s">Visualizing Quaternions</a></p>
+				</div>
+			</div>
+
+			<div class="onecolumn">
+				<div class="holder">
+					<h2>3D Rotation</h2>
+					<p>When an object is rotated in space, there are different ways to represent the rotation. One representation is through a three-by-three rotation matrix. See the tab below on rotation matrices for more information about this specific representation. A matrix can express the way an object is rotated about three axes, which leads to another type of representation of 3D rotation – Euler Angles. Each axis is associated with an angle that describes the object’s rotation. While Euler Angles can appear to be the easiest way to represent the rotation of an object in 3D space, there is a problem that arises with specific rotations called “Gimbal Lock,” that limits the use of Euler Angles. For this reason, it can be helpful to describe 3D rotation in another way, which is where quaternions come into use. A quaternion can express a rotation when its norm, \(|q|=\sqrt{q_{0}^2+q_{1}^2+q_{2}^2+q_{3}^2}\) is equal to \(1\). In order to find the coordinate point, Y, of an object after it has been rotated from its previous point, X, the following equation is given: \(q_{Y}=q_{A}q_{X}q_{A}^\star\). In this equation, \(q_{A}\) is the rotation, \(q_{A}^\star\) is its conjugate, and both \(q_{X}\) and \(q_{Y}\) are vectors expressed as quaternions with no real part. Euler Angles and rotation matrices both can be converted to quaternions. However, these conversion methods come with their own set of challenges which is described in further detail below.</p>
+				</div>
+			</div>
+
+			<div class="onecolumn">
+				<div class="holder">
+					<h2>Euler Angle to Rotation Matrices</h2>
+					<p>A rotation around the z-axis with an angle \(\psi\) can be represented by the following rotation matrix:</p>
+					<img width="240" height="118" src="https://drive.google.com/uc?export=view&id=1od8xpPp78XycedpwteZNF9ZxKtzcByU_" align="center">
+					<p>A rotation around the y-axis with an angle \(\theta\) can be represented by the following rotation matrix:</p>
+					<img width="246" height="120" src="https://drive.google.com/uc?export=view&id=1MhjM5mFIGa2xbFQWmtK2abO9cCoRCnQ-">
+					<p>A rotation around the x-axis with an angle \(\phi\) can be represented by the following rotation matrix:</p>
+					<img width="234" height="118" src="https://drive.google.com/uc?export=view&id=1_P3owRhBJnOKqFWqtcMtVJOfVmCpPei8">
+					<p>These matrices can be multiplied by a matrix containing the coordinates of a starting point to find the new coordinates after rotating around the axis associated with that matrix. For example, if the point \((1,1,1)\) is rotated 90 degrees about the x-axis, its new coordinates would be calculated as follows:</p>
+					<img width="300" height="108" src="https://drive.google.com/uc?export=view&id=1jTN0zr3JfCLRSgEVSkdfCuqEs0THQpO8">
+					<p>In order to get the rotation matrix for a series of rotations, matrices can be multiplied, as shown in the following example: </p>
+					<img width="822" height="116" src="https://drive.google.com/uc?export=view&id=1tV6YvC5ODJNgN-Dd_re5NMVIVTy89rLZ">
+					<img width="870" height="118" src="https://drive.google.com/uc?export=view&id=1iC5Ax5lVP2geE_dWDjTLeN-003PMJ6un">
+					<p>This is an example of a rotation matrix for a rotation first around the z-axis, then the y-axis, and then the x-axis. The rotation matrix for the x-axis is first multiplied by the rotation matrix for the y-axis. The resulting matrix is then multiplied by the z-axis rotation matrix. The final result is a matrix that can be used to determine the coordinates of an object that has undergone a “zyx” rotation.</p>
+					<p>For more information on rotation matrix and Euler angle conversion, click the following link: <a target="_blank" href="https://psx.arthus.net/gamedev/quaternion-tutorial-2-0-1.pdf">Euler Angles Paper</a></p>
+				</div>
+			</div>
+
+			<div class="onecolumn">
+				<div class="holder">
+					<h2>Rotation Matrices to Quaternions</h2>
+					<p>Given a rotation matrix, \(A\), the following equations show the methods for obtaining the corresponding quaternion: \[|q_{0}|=\sqrt{\frac{\text{Trace}(A)+1}{4}}\]
+						\[|q_{1}|=\sqrt{\frac{A_{11}}{2}+\frac{1-\text{Trace}(A)}{4}}\]
+						\[|q_{2}|=\sqrt{\frac{A_{22}}{2}+\frac{1-\text{Trace}(A)}{4}}\]
+						\[|q_{3}|=\sqrt{\frac{A_{33}}{2}+\frac{1-\text{Trace}(A)}{4}}\]
+						where \(\text{Trace}(A)=A_{11}+A_{22}+A_{33}\).
+					</p>
+				</div>
+			</div>
+
+			<div class="onecolumn">
+				<div class="holder">
+					<h2>Euler Angles to a Quaternion</h2>
+					<p>Based on the conversions shown above, Euler Angles to a rotation matrix and a rotation matrix to a quaternion, it is relatively simple to piece together how one might convert Euler angles to a quaternion. Since Euler angles have twelve different rotation sequences, it is important to note that once the matrices corresponding to the rotations around each axis are constructed, they must be multiplied in the correct order for the desired sequence.</p>
+					<p>Though it might be worthwhile to construct the conversion methods of Euler angles to a quaternion using the information above, the simplified conversion methods are also given below based on each series of rotation.</p>
+					<h3>XYZ Rotation</h3>
+					<p>\[q_{0}=\cos(\frac{\phi}{2}) \cos(\frac{\theta}{2}) \cos(\frac{\psi}{2}) - \sin(\frac{\phi}{2}) \sin(\frac{\theta}{2}) \sin(\frac{\psi}{2})\]
+						\[q_{1}=\sin(\frac{\phi}{2}) \cos(\frac{\theta}{2}) \cos(\frac{\psi}{2}) + \cos(\frac{\phi}{2}) \sin(\frac{\theta}{2}) \sin(\frac{\psi}{2})\]
+						\[q_{2}=\cos(\frac{\phi}{2}) \sin(\frac{\theta}{2}) \cos(\frac{\psi}{2}) - \sin(\frac{\phi}{2}) \cos(\frac{\theta}{2}) \sin(\frac{\psi}{2})\]
+						\[q_{3}=\sin(\frac{\phi}{2}) \sin(\frac{\theta}{2}) \cos(\frac{\psi}{2}) + \cos(\frac{\phi}{2}) \cos(\frac{\theta}{2}) \sin(\frac{\psi}{2})\]
+					</p>
+					<h3>XZY Rotation</h3>
+					<p>\[q_{0}=\sin(\frac{\phi}{2}) \sin(\frac{\theta}{2}) \sin(\frac{\psi}{2}) + \cos(\frac{\phi}{2}) \cos(\frac{\theta}{2}) \cos(\frac{\psi}{2})\]
+						\[q_{1}=\sin(\frac{\phi}{2}) \cos(\frac{\theta}{2}) \cos(\frac{\psi}{2}) - \cos(\frac{\phi}{2}) \sin(\frac{\theta}{2}) \sin(\frac{\psi}{2})\]
+						\[q_{2}=\cos(\frac{\phi}{2}) \sin(\frac{\theta}{2}) \cos(\frac{\psi}{2}) - \sin(\frac{\phi}{2}) \cos(\frac{\theta}{2}) \sin(\frac{\psi}{2})\]
+						\[q_{3}=\sin(\frac{\phi}{2}) \sin(\frac{\theta}{2}) \cos(\frac{\psi}{2}) + \cos(\frac{\phi}{2}) \cos(\frac{\theta}{2}) \sin(\frac{\psi}{2})\]
+					</p>
+					<p><b>.<br>.<br>.</b></p>
+				</div>
+			</div>
+
+			<div class="onecolumn">
+				<div class="holder">
+					<h2>Quaternion to Euler Angles</h2>
+					<p>Coming soon...</p>
+				</div>
+			</div>
+
+			<div class="onecolumn">
+				<div class="holder">
+					<h2>Euler Angles and Gimbal Lock</h2>
+					<p>Coming Soon...</p>
+				</div>
+			</div>
+
+			<div class="onecolumn">
+				<div class="holder">
+					<h2>References and Additional Resources</h2>
+					<p><a target="_blank" href="https://psx.arthus.net/gamedev/quaternion-tutorial-2-0-1.pdf"><i>A Tutorial on Euler Angles and Quaternions</i></a></p>
+					<p><a target="_blank" href="https://ntrs.nasa.gov/citations/19770019231"><i>Euler angles, quaternions, and transformation matrices for space shuttle analysis</i></a></p>
+					<p><a target="_blank" href="https://www.youtube.com/watch?v=zc8b2Jo7mno">"Quaternions and 3d rotation, explained interactively"</a></p>
+					<p><a target="_blank" href="https://www.youtube.com/watch?v=d4EgbgTm0Bg">"Visualizing quaternions(4d numbers) with stereographic projection"</a></p>
+				</div>
+			</div>
+		</div>
 	</main>
 </body>
 </html>
