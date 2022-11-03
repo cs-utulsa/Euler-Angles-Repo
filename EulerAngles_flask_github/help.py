@@ -5,7 +5,7 @@ def add(a ,b, c):
 
 def truncate(ls):
     for i in ls:
-        i = [round(elt, 2) for elt in i]
+        i = [ "%.4f" % elt for elt in i]
     return ls
 
 
