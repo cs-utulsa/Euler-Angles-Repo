@@ -2,6 +2,7 @@ from flask import Flask, render_template, request
 app = Flask(__name__)
 
 import help as h
+import EulerAngleRotate as ep
 
 app.config['TESTING'] = True
 
@@ -19,6 +20,7 @@ def help():
 @app.route('/converter', methods = ['POST', 'GET'])
 def euler(): 
     result = 0
+    display = ""
     #####python program to convert to quaternion angles#####
     if request.method == 'POST':
         x = float(request.values.get("x"))
@@ -26,7 +28,8 @@ def euler():
         z = float(request.values.get("z"))
         rot = str(request.form.get("rotation"))
         result = h.eulerToQuat(x, y, z, rot)
-    return render_template('EulerToQuaternion.html', calculation = str(result))
+        display = ep.eulerToQuat(x, y, z, rot)
+    return render_template('EulerToQuaternion.html', calculation = str(result), pict = "data:image/png;base64," + display)
 
 
 if __name__ == '__main__':
