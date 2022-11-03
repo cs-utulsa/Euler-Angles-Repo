@@ -37,7 +37,14 @@ def euler():
         display = ep.eulerToQuat(x, y, z, rot)
         matrix = ep.rotArray(x, y, z, rot)
         matrixList = np.ndarray.tolist(matrix)
-        return render_template('EulerToQuaternion.html', mat = matrixList ,
+        list1 = matrixList[0]
+        list2 = matrixList[1]
+        list3 = matrixList[2]
+        FormattedList1 = [ '%.2f' % elem for elem in list1  ]
+        FormattedList2 = [ '%.2f' % elem2 for elem2 in list2  ]
+        FormattedList3 = [ '%.2f' % elem3 for elem3 in list3  ]
+        finalList = [FormattedList1,FormattedList2, FormattedList3]
+        return render_template('EulerToQuaternion.html', mat = finalList ,
         calculation = resultFormattedList, pict = "data:image/png;base64," + display)
 
     return render_template('EulerToQuaternion.html', mat = matrix, calculation = result, pict = "data:image/png;base64," + display)
