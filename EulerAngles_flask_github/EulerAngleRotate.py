@@ -3,6 +3,14 @@ import numpy as np
 from matplotlib.figure import Figure
 import base64
 from io import BytesIO
+
+
+def rotArray(x, y, z, rotationSel):
+    Rot = R.from_euler(rotationSel, [x, y, z], degrees=True)
+    RotArray = Rot.as_matrix()
+    return RotArray
+
+
 def eulerToQuat(x, y, z, rotationSel):
     Rot = R.from_euler(rotationSel, [x, y, z], degrees=True)
     RotArray = Rot.as_matrix()

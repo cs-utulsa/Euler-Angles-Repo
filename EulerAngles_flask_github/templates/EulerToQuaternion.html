@@ -24,7 +24,7 @@
 			</div>
 			<div class="column">
 				<div class="sectionholder">
-					<h1>Output: {{ calculation }} </h1>   
+					<h1>Output</h1>   
 				</div>
 			</div>
 		</div>
@@ -69,28 +69,28 @@
 						<p>W is the real part of the quaternion.</p>
 						<table>
 							<tr>
-								<td>w <input type="number" class="numin"></td>
-								<td>x <input type="number" class="numin"></td>
-								<td>y <input type="number" class="numin"></td>
-								<td>z <input type="number" class="numin"></td>
+								<td>w <input type="number" class="numin" value = {{ calculation[0] }} ></td>
+								<td>x <input type="number" class="numin" value = {{ calculation[1] }}></td>
+								<td>y <input type="number" class="numin" value = {{ calculation[2] }}></td>
+								<td>z <input type="number" class="numin" value = {{ calculation[3] }}></td>
 							</tr>
 						</table>
 						<h2>Rotation Matrix</h2>
 						<table>
 							<tr>
-								<td><input type="number" class="matrix"></td>
-								<td><input type="number" class="matrix"></td>
-								<td><input type="number" class="matrix"></td>
+								<td><input type="number" class="matrix" value = {{ mat[0][0] }}></td>
+								<td><input type="number" class="matrix" value = {{ mat[0][1] }}></td>
+								<td><input type="number" class="matrix" value = {{ mat[0][2] }}></td>
 							</tr>
 							<tr>
-								<td><input type="number" class="matrix"></td>
-								<td><input type="number" class="matrix"></td>
-								<td><input type="number" class="matrix"></td>
+								<td><input type="number" class="matrix" value = {{ mat[1][0] }}></td>
+								<td><input type="number" class="matrix" value = {{ mat[1][1] }}></td>
+								<td><input type="number" class="matrix" value = {{ mat[1][2] }}></td>
 							</tr>
 							<tr>
-								<td><input type="number" class="matrix"></td>
-								<td><input type="number" class="matrix"></td>
-								<td><input type="number" class="matrix"></td>
+								<td><input type="number" class="matrix" value = {{ mat[2][0] }}></td>
+								<td><input type="number" class="matrix" value = {{ mat[2][1] }}></td>
+								<td><input type="number" class="matrix" value = {{ mat[2][2] }}></td>
 							</tr>
 						</table>
 					</div>
