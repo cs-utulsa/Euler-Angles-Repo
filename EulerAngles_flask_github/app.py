@@ -21,9 +21,9 @@ def help():
 @app.route('/converter', methods = ['POST', 'GET'])
 def euler(): 
     ##default page state vals
-    result = [0, 0, 0, 0]
+    result = [0.0, 0.0, 0.0, 0.0]
     display = ep.initialImage()
-    matrix = [[0,0,0], [0,0,0], [0,0,0]]
+    matrix = [[0.0,0.0,0.0], [0.0,0.0,0.0], [0.0,0.0,0.0]]
 
     #####python program to convert to quaternion angles#####
     if request.method == 'POST':
@@ -32,11 +32,13 @@ def euler():
         z = float(request.values.get("z"))
         rot = str(request.form.get("rotation"))
         result = h.eulerToQuat(x, y, z, rot)
+        resultList = np.ndarray.tolist(result)
+        resultFormattedList = [ '%.4f' % elem for elem in resultList ]
         display = ep.eulerToQuat(x, y, z, rot)
-        matrix = np.ndarray.tolist(ep.rotArray(x, y, z, rot))
-        matrix = h.truncate(matrix)
-        return render_template('EulerToQuaternion.html', mat = matrix ,
-        calculation = np.ndarray.tolist(result), pict = "data:image/png;base64," + display)
+        matrix = ep.rotArray(x, y, z, rot)
+        matrixList = np.ndarray.tolist(matrix)
+        return render_template('EulerToQuaternion.html', mat = matrixList ,
+        calculation = resultFormattedList, pict = "data:image/png;base64," + display)
 
     return render_template('EulerToQuaternion.html', mat = matrix, calculation = result, pict = "data:image/png;base64," + display)
 
