@@ -11,9 +11,6 @@ import numpy as np
 def eulerToQuat(x, y, z, rotationSel):
     Rot = R.from_euler(rotationSel, [x, y, z], degrees=True)
     Rot_quat = Rot.as_quat()
-    return Rot_quat
-
-def truncate(ls):
-    for i in ls:
-        i =  [round(elem, 2) for elem in i]
-    return ls
+    RotArray = Rot_quat.as_matrix()
+    matrix = np.asmatrix(RotArray)
+    return matrix
