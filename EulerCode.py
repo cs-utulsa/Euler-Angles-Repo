@@ -131,10 +131,10 @@ print("Position5 Rotated:")
 print(finalPos5)
 print()
 
-# Rot_quat = Rot.as_quat()
-
-# print("Quaternion Matrix:")
-# print(Rot_quat)
+Rot_quat = Rot.as_quat()
+matrix = np.asmatrix(Rot_quat)
+print("Quaternion Matrix:")
+print(matrix)
 
 # fig = plt.figure()
 fig = Figure()

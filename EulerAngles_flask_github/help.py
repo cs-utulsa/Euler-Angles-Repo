@@ -7,6 +7,5 @@ def eulerToQuat(x, y, z, rotationSel):
     Rot = R.from_euler(rotationSel, [x, y, z], degrees=True)
     RotArray = Rot.as_matrix() 
     Rot_quat = Rot.as_quat()
-    RotArray = Rot_quat.as_matrix()
-    matrix = np.asmatrix(RotArray)
+    matrix = np.asmatrix(Rot_quat)
     return matrix
