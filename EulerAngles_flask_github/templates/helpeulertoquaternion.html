@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="static/CSS/pagestyles.css" rel="stylesheet"/>
+	<link rel="icon" type="image/x-icon" href="favicon.ico">
+	<title>Help</title>
+
+	<!-- MathJax script for rendering LaTeX math representation-->
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+	<script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+	<header>
+		<div class="taskbar">
+			<a href="/">Home</a>
+			<a href="/converter">Converter</a>
+			<a class="active" href="/help">Help</a>
+		</div>
+	</header>
+	<main>
+		<div class="row">
+			<div class="onecolumn">
+				<div class="sectionholder">
+					<h1 align="center">Euler Angles to a Quaternion</h1>
+				</div>
+			</div>
+
+			<div class="onecolumn">
+				<div class="holder">
+					<p>Based on the conversions shown above, Euler Angles to a rotation matrix and a rotation matrix to a quaternion, it is relatively simple to piece together how one might convert Euler angles to a quaternion. Since Euler angles have twelve different rotation sequences, it is important to note that once the matrices corresponding to the rotations around each axis are constructed, they must be multiplied in the correct order for the desired sequence.</p>
+					<p>Though it might be worthwhile to construct the conversion methods of Euler angles to a quaternion using the information above, the simplified conversion methods are also given below based on each series of rotation.</p>
+					<h3>XYZ Rotation</h3>
+					<p>\[q_{0}=\cos(\frac{\phi}{2}) \cos(\frac{\theta}{2}) \cos(\frac{\psi}{2}) - \sin(\frac{\phi}{2}) \sin(\frac{\theta}{2}) \sin(\frac{\psi}{2})\]
+						\[q_{1}=\sin(\frac{\phi}{2}) \cos(\frac{\theta}{2}) \cos(\frac{\psi}{2}) + \cos(\frac{\phi}{2}) \sin(\frac{\theta}{2}) \sin(\frac{\psi}{2})\]
+						\[q_{2}=\cos(\frac{\phi}{2}) \sin(\frac{\theta}{2}) \cos(\frac{\psi}{2}) - \sin(\frac{\phi}{2}) \cos(\frac{\theta}{2}) \sin(\frac{\psi}{2})\]
+						\[q_{3}=\sin(\frac{\phi}{2}) \sin(\frac{\theta}{2}) \cos(\frac{\psi}{2}) + \cos(\frac{\phi}{2}) \cos(\frac{\theta}{2}) \sin(\frac{\psi}{2})\]
+					</p>
+					<h3>XZY Rotation</h3>
+					<p>\[q_{0}=\sin(\frac{\phi}{2}) \sin(\frac{\theta}{2}) \sin(\frac{\psi}{2}) + \cos(\frac{\phi}{2}) \cos(\frac{\theta}{2}) \cos(\frac{\psi}{2})\]
+						\[q_{1}=\sin(\frac{\phi}{2}) \cos(\frac{\theta}{2}) \cos(\frac{\psi}{2}) - \cos(\frac{\phi}{2}) \sin(\frac{\theta}{2}) \sin(\frac{\psi}{2})\]
+						\[q_{2}=\cos(\frac{\phi}{2}) \sin(\frac{\theta}{2}) \cos(\frac{\psi}{2}) - \sin(\frac{\phi}{2}) \cos(\frac{\theta}{2}) \sin(\frac{\psi}{2})\]
+						\[q_{3}=\sin(\frac{\phi}{2}) \sin(\frac{\theta}{2}) \cos(\frac{\psi}{2}) + \cos(\frac{\phi}{2}) \cos(\frac{\theta}{2}) \sin(\frac{\psi}{2})\]
+					</p>
+					<p><b>.<br>.<br>.</b></p>
+				</div>
+			</div>
+		</div>
+	</main>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="static/CSS/pagestyles.css" rel="stylesheet"/>
+	<link rel="icon" type="image/x-icon" href="favicon.ico">
+	<title>Help</title>
+
+	<!-- MathJax script for rendering LaTeX math representation-->
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+	<script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+	<header>
+		<div class="taskbar">
+			<a href="/">Home</a>
+			<a href="/converter">Converter</a>
+			<a class="active" href="/help">Help</a>
+		</div>
+	</header>
+	<main>
+		<div class="row">
+			<div class="onecolumn">
+				<div class="sectionholder">
+					<h1 align="center">Euler Angle to Rotation Matrices</h1>
+				</div>
+			</div>
+
+			<div class="onecolumn">
+				<div class="holder">
+					<p>A rotation around the z-axis with an angle \(\psi\) can be represented by the following rotation matrix:</p>
+					<img width="240" height="118" src="https://drive.google.com/uc?export=view&id=1od8xpPp78XycedpwteZNF9ZxKtzcByU_" align="center">
+					<p>A rotation around the y-axis with an angle \(\theta\) can be represented by the following rotation matrix:</p>
+					<img width="246" height="120" src="https://drive.google.com/uc?export=view&id=1MhjM5mFIGa2xbFQWmtK2abO9cCoRCnQ-">
+					<p>A rotation around the x-axis with an angle \(\phi\) can be represented by the following rotation matrix:</p>
+					<img width="234" height="118" src="https://drive.google.com/uc?export=view&id=1_P3owRhBJnOKqFWqtcMtVJOfVmCpPei8">
+					<p>These matrices can be multiplied by a matrix containing the coordinates of a starting point to find the new coordinates after rotating around the axis associated with that matrix. For example, if the point \((1,1,1)\) is rotated 90 degrees about the x-axis, its new coordinates would be calculated as follows:</p>
+					<img width="300" height="108" src="https://drive.google.com/uc?export=view&id=1jTN0zr3JfCLRSgEVSkdfCuqEs0THQpO8">
+					<p>In order to get the rotation matrix for a series of rotations, matrices can be multiplied, as shown in the following example: </p>
+					<img width="822" height="116" src="https://drive.google.com/uc?export=view&id=1tV6YvC5ODJNgN-Dd_re5NMVIVTy89rLZ">
+					<img width="870" height="118" src="https://drive.google.com/uc?export=view&id=1iC5Ax5lVP2geE_dWDjTLeN-003PMJ6un">
+					<p>This is an example of a rotation matrix for a rotation first around the z-axis, then the y-axis, and then the x-axis. The rotation matrix for the x-axis is first multiplied by the rotation matrix for the y-axis. The resulting matrix is then multiplied by the z-axis rotation matrix. The final result is a matrix that can be used to determine the coordinates of an object that has undergone a “zyx” rotation.</p>
+					<p>For more information on rotation matrix and Euler angle conversion, click the following link: <a target="_blank" href="https://psx.arthus.net/gamedev/quaternion-tutorial-2-0-1.pdf">Euler Angles Paper</a></p>
+				</div>
+			</div>
+		</div>
+	</main>
+</body>
+</html>
