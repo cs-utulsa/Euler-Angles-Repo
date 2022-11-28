@@ -49,6 +49,33 @@ def euler():
 
     return render_template('EulerToQuaternion.html', mat = matrix, calculation = result, pict = "data:image/png;base64," + display)
 
+@app.route('/help/quaternions')
+def quaternions():
+    return render_template('quaternions.html')
+
+@app.route('/help/3drotation')
+def threeDrotation():
+    return render_template('3drotation.html')
+
+@app.route('/help/eulertomatrix')
+def eulertomatrix():
+    return render_template('eulertomatrix.html')
+
+@app.route('/help/matrixtoquaternion')
+def matrixtoquaternion():
+    return render_template('matrixtoquaternion.html')
+
+@app.route('/help/helpeulertoquaternion')
+def helpeulertoquaternion():
+    return render_template('helpeulertoquaternion.html')
+
+@app.route('/help/helpquaterniontoeuler')
+def helpquaterniontoeuler():
+    return render_template('helpquaterniontoeuler.html')
+
+@app.route('/help/eulergimbal')
+def eulergimbal():
+    return render_template('eulergimbal.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
