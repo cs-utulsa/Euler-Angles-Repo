@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="../static/pagestyles.css" rel="stylesheet"/>
+	<link rel="icon" type="image/x-icon" href="../static/favicon.ico">
+	<title>Help</title>
+
+	<!-- MathJax script for rendering LaTeX math representation-->
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+	<script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+	<header>
+		<div class="taskbar">
+			<a href="/">Home</a>
+			<a href="/converter">Converter</a>
+			<a class="active" href="/help">Help</a>
+		</div>
+	</header>
+	<main>
+		<div class="row">
+			<div class="onecolumn">
+				<div class="sectionholder">
+					<h1 align="center">3D Rotation</h1>
+				</div>
+			</div>
+
+			<div class="onecolumn">
+				<div class="holder">
+					<p>When an object is rotated in space, there are different ways to represent the rotation. One representation is through a three-by-three rotation matrix. See the tab below on rotation matrices for more information about this specific representation. A matrix can express the way an object is rotated about three axes, which leads to another type of representation of 3D rotation – Euler Angles. Each axis is associated with an angle that describes the object’s rotation. While Euler Angles can appear to be the easiest way to represent the rotation of an object in 3D space, there is a problem that arises with specific rotations called “Gimbal Lock,” that limits the use of Euler Angles. For this reason, it can be helpful to describe 3D rotation in another way, which is where quaternions come into use. A quaternion can express a rotation when its norm, \(|q|=\sqrt{q_{0}^2+q_{1}^2+q_{2}^2+q_{3}^2}\) is equal to \(1\). In order to find the coordinate point, Y, of an object after it has been rotated from its previous point, X, the following equation is given: \(q_{Y}=q_{A}q_{X}q_{A}^\star\). In this equation, \(q_{A}\) is the rotation, \(q_{A}^\star\) is its conjugate, and both \(q_{X}\) and \(q_{Y}\) are vectors expressed as quaternions with no real part. Euler Angles and rotation matrices both can be converted to quaternions. However, these conversion methods come with their own set of challenges which is described in further detail below.</p>
+				</div>
+			</div>
+		</div>
+	</main>
+</body>
+</html>
