@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="../static/pagestyles.css" rel="stylesheet"/>
+	<link rel="icon" type="image/x-icon" href="../static/favicon.ico">
+	<title>Help</title>
+
+	<!-- MathJax script for rendering LaTeX math representation-->
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+	<script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+	<header>
+		<div class="taskbar">
+			<a href="/">Home</a>
+			<a href="/converter">Converter</a>
+			<a class="active" href="/help">Help</a>
+		</div>
+	</header>
+	<main>
+		<div class="row">
+			<div class="onecolumn">
+				<div class="sectionholder">
+					<h1 align="center">Rotation Matrices to Quaternions</h1>
+				</div>
+			</div>
+
+			<div class="onecolumn">
+				<div class="holder">
+					<p>Given a rotation matrix, \(A\), the following equations show the methods for obtaining the corresponding quaternion: \[|q_{0}|=\sqrt{\frac{\text{Trace}(A)+1}{4}}\]
+						\[|q_{1}|=\sqrt{\frac{A_{11}}{2}+\frac{1-\text{Trace}(A)}{4}}\]
+						\[|q_{2}|=\sqrt{\frac{A_{22}}{2}+\frac{1-\text{Trace}(A)}{4}}\]
+						\[|q_{3}|=\sqrt{\frac{A_{33}}{2}+\frac{1-\text{Trace}(A)}{4}}\]
+						where \(\text{Trace}(A)=A_{11}+A_{22}+A_{33}\).
+					</p>
+				</div>
+			</div>
+		</div>
+	</main>
+</body>
+</html>

@@ -37,6 +37,10 @@
 	padding-right: 2%;
 }
 
+p {
+	font-size: 14pt;
+}
+
 body {
 	background-color: #0F74E0;
 	margin: 0px;
