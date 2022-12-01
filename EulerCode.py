@@ -20,9 +20,12 @@ while (passed):
 Rot = R.from_euler(rotationSel, [xinput, yinput, zinput], degrees=True)
 
 print("Euler Rotation Matrix:")
+print(Rot)
 print(Rot.as_matrix())
 RotArray = Rot.as_matrix()
+print(np.ndarray.tolist(RotArray))
 matrix = np.asmatrix(RotArray)
+
 row = [0,0,0]
 result = np.r_[matrix,[row]]
 column = np.array([[0], [0], [0], [1]])
