@@ -3,7 +3,7 @@
 			var UserOrder = "XYZ"; //user input (controlled by buttons)
 			var userSpeed = .01; //adjust this for rotation speed
 
-			const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 500);
+			const camera = new THREE.PerspectiveCamera(45, 400 / 400, 1, 1000);
 			const scene = new THREE.Scene();
 
 			camera.position.x = .75;
@@ -11,9 +11,12 @@
 			camera.position.z = .75;
 			camera.lookAt(scene.position);
 
+			const loader = new THREE.TextureLoader();
 
-			const geometry = new THREE.BoxGeometry( 0.2, 0.2, 0.2 );
-			const material = new THREE.MeshNormalMaterial();
+			const textureCube =  loader.load('cubeSide.png');
+	
+			const geometry = new THREE.BoxGeometry( 0.4, 0.4, 0.4 );
+			const material = new THREE.MeshBasicMaterial( { color: 0xffffff, map: textureCube } );
 
 			const mesh = new THREE.Mesh( geometry, material );
 			scene.add( mesh );
@@ -23,8 +26,9 @@
 			scene.add( axesHelper );
 
 			const renderer = new THREE.WebGLRenderer( { antialias: true } );
-			renderer.setSize( window.innerWidth, window.innerHeight );
-			document.body.appendChild( renderer.domElement );
+			renderer.setSize( 400, 400 );
+			container = document.getElementById( 'container' );
+			container.appendChild(renderer.domElement);
 
 			function finalAnimate(time){
 				requestAnimationFrame(finalAnimate);
