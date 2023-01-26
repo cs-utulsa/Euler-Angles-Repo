@@ -1,15 +1,3 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<title>My first three.js app</title>
-		<style>
-			body { margin: 0; }
-		</style>
-	</head>
-	<body>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.js"></script>
-		<script>
 
 			var UserX = .5, UserY = .5, UserZ = -.5; //user input
 			var UserOrder = "XYZ"; //user input (controlled by buttons)
@@ -125,6 +113,3 @@
 				renderer.render(scene, camera);
 			}
 			finalAnimate();
-		</script>
-	</body>
-</html>
