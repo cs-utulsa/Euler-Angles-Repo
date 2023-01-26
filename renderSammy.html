@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>My first three.js app</title>
+		<style>
+			body { margin: 0; }
+		</style>
+	</head>
+	<body>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.js"></script>
+		<script>
+
+
+			const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 500);
+			const scene = new THREE.Scene();
+
+			camera.position.x = 1;
+			camera.position.y = 1;
+			camera.position.z = 1;
+			camera.lookAt(scene.position);
+
+			const loader = new THREE.TextureLoader();
+
+			const textureCube =  loader.load('cubeSide.png');
+	
+			const geometry = new THREE.BoxGeometry( 0.4, 0.4, 0.4 );
+			const material = new THREE.MeshBasicMaterial( { color: 0xffffff, map: textureCube } );
+
+			const mesh = new THREE.Mesh( geometry, material );
+			scene.add( mesh );
+
+
+			const axesHelper = new THREE.AxesHelper( 5 ); 
+			scene.add( axesHelper );
+
+			const renderer = new THREE.WebGLRenderer( { antialias: true } );
+			renderer.setSize( window.innerWidth, window.innerHeight );
+			document.body.appendChild( renderer.domElement );
+
+			var xRot = .5, yRot = .5, zRot = .5;
+			var xDone = true;
+			var yDone = true;
+			function animate(time, xRot) {
+				if(mesh.rotation.x < .5) {
+					requestAnimationFrame(animate);
+					mesh.rotation.x += 0.005;
+					renderer.render(scene, camera);
+				}
+				else if(mesh.rotation.y < .5){
+					requestAnimationFrame(animate);
+					mesh.rotation.y += 0.005;
+				}
+				else if(mesh.rotation.z < .5){
+					requestAnimationFrame(animate);
+					mesh.rotation.z += 0.005;
+				}
+				renderer.render(scene, camera);
+			}
+			animate();
+	
+		</script>
+	</body>
+</html>
