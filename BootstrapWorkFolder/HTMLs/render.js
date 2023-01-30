@@ -1,14 +1,14 @@
 
 			var UserX = .5, UserY = .5, UserZ = -.5; //user input
 			var UserOrder = "XYZ"; //user input (controlled by buttons)
-			var userSpeed = .01; //adjust this for rotation speed
+			var userSpeed = .005; //adjust this for rotation speed
 
 			const camera = new THREE.PerspectiveCamera(45, 400 / 400, 1, 1000);
 			const scene = new THREE.Scene();
 
-			camera.position.x = .75;
-			camera.position.y = .75;
-			camera.position.z = .75;
+			camera.position.x = 1;
+			camera.position.y = 1;
+			camera.position.z = 1;
 			camera.lookAt(scene.position);
 
 			const loader = new THREE.TextureLoader();
@@ -46,7 +46,11 @@
 						else if(Math.abs(mesh.rotation.z) < Math.abs(UserZ)) {  
 							(UserZ < 0) ? mesh.rotation.z -= rotationSpeed : mesh.rotation.z += rotationSpeed;
 						}
-
+						else{
+							mesh.rotation.x = 0;
+							mesh.rotation.y = 0;
+							mesh.rotation.z = 0;
+						}
 						break;
 
 					case("YZX"):
