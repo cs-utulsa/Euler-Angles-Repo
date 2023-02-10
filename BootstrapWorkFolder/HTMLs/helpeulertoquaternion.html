@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Convert+ Home</title>
+  <title>Lesson: Euler to Quaternion</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-
+  
   <!-- MathJax script for rendering LaTeX math representation-->
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
@@ -82,75 +82,55 @@
 
   <main>
     <div class="container">
+
       <div class="row my-5 g-5">
 
         <!-- 2/3 column -->
         <div class="col-8 border-end">
           <div class="container">
-            <h1 class="display-4">Quirky Tag Line. Right Here.</h1>
+            <h1>Euler Angles to a Quaternion</h1>
+          </div>
+          <div class="container">
+            <p>Based on the conversions shown above, Euler Angles to a rotation matrix and a rotation matrix to a quaternion, it is relatively simple to piece together how one might convert Euler angles to a quaternion. Since Euler angles have twelve different rotation sequences, it is important to note that once the matrices corresponding to the rotations around each axis are constructed, they must be multiplied in the correct order for the desired sequence.</p>
+          </div>
+          <div class="container mt-5">
+            <p>Though it might be worthwhile to construct the conversion methods of Euler angles to a quaternion using the information above, the simplified conversion methods are also given below based on each series of rotation.</p>
+          </div>
+          <div class="container mt-5">
+            <strong>XYZ Rotation</strong>
+            <p>\[q_{0}=\cos(\frac{\phi}{2}) \cos(\frac{\theta}{2}) \cos(\frac{\psi}{2}) - \sin(\frac{\phi}{2}) \sin(\frac{\theta}{2}) \sin(\frac{\psi}{2})\]
+              \[q_{1}=\sin(\frac{\phi}{2}) \cos(\frac{\theta}{2}) \cos(\frac{\psi}{2}) + \cos(\frac{\phi}{2}) \sin(\frac{\theta}{2}) \sin(\frac{\psi}{2})\]
+              \[q_{2}=\cos(\frac{\phi}{2}) \sin(\frac{\theta}{2}) \cos(\frac{\psi}{2}) - \sin(\frac{\phi}{2}) \cos(\frac{\theta}{2}) \sin(\frac{\psi}{2})\]
+              \[q_{3}=\sin(\frac{\phi}{2}) \sin(\frac{\theta}{2}) \cos(\frac{\psi}{2}) + \cos(\frac{\phi}{2}) \cos(\frac{\theta}{2}) \sin(\frac{\psi}{2})\]
+            </p>
+          </div>
+          <div class="container mt-5">
+            <strong>XZY Rotation</strong>
+            <p>\[q_{0}=\sin(\frac{\phi}{2}) \sin(\frac{\theta}{2}) \sin(\frac{\psi}{2}) + \cos(\frac{\phi}{2}) \cos(\frac{\theta}{2}) \cos(\frac{\psi}{2})\]
+              \[q_{1}=\sin(\frac{\phi}{2}) \cos(\frac{\theta}{2}) \cos(\frac{\psi}{2}) - \cos(\frac{\phi}{2}) \sin(\frac{\theta}{2}) \sin(\frac{\psi}{2})\]
+              \[q_{2}=\cos(\frac{\phi}{2}) \sin(\frac{\theta}{2}) \cos(\frac{\psi}{2}) - \sin(\frac{\phi}{2}) \cos(\frac{\theta}{2}) \sin(\frac{\psi}{2})\]
+              \[q_{3}=\sin(\frac{\phi}{2}) \sin(\frac{\theta}{2}) \cos(\frac{\psi}{2}) + \cos(\frac{\phi}{2}) \cos(\frac{\theta}{2}) \sin(\frac{\psi}{2})\]
+            </p>
+
+            <p><b>.<br>.<br>.</b></p>
           </div>
 
           <div class="container mt-5">
-            <a class="text-decoration-none text-reset" href="./converterhome.html">
-
-              <div class="row">
-                <div class="col-8">
-                  <h3>Converters</h3>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vulputate mi sit amet mauris. Egestas dui id ornare arcu odio ut. Purus faucibus ornare suspendisse sed nisi. Viverra suspendisse potenti nullam ac tortor. Mauris commodo quis imperdiet massa tincidunt. Turpis egestas pretium aenean pharetra magna.</p>
-                </div>
-                <div class="col-4">
-                  <img src="./convert.png" class="rounded float-end img-fluid" alt="...">
-                </div>
-              </div>
-              
-            </a>
+            <a href="./eulertomatrix.html"><button class="btn btn-primary me-md-2" type="button" style="background-color:#1300B3;">Previous Lesson</button></a>
+            <a href="./helpquaterniontoeuler.html"><button class="btn btn-primary me-md-2" type="button" style="background-color:#1300B3;">Next Lesson</button></a>
           </div>
-
-          <div class="container">
-
-            <a class="text-decoration-none text-reset" href="./help.html">
-
-              <div class="row">
-                <div class="col-8">
-                  
-                  <h3>Lessons <span class="badge" style="background-color:#FFB019;">New</span></h3>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vulputate mi sit amet mauris. Egestas dui id ornare arcu odio ut. Purus faucibus ornare suspendisse sed nisi. Viverra suspendisse potenti nullam ac tortor. Mauris commodo quis imperdiet massa tincidunt. Turpis egestas pretium aenean pharetra magna.</p>
-                </div>
-                <div class="col-4">
-                  <img src="./learn.png" class="rounded float-end img-fluid" alt="...">
-                </div>
-              </div>
-
-            </a>
-          </div>
-
-          <div class="container">
-
-            <a class="text-decoration-none text-reset" href="./about.html">
-
-              <div class="row">
-                <div class="col-8">
-                  <h3>About Us</h3>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vulputate mi sit amet mauris. Egestas dui id ornare arcu odio ut. Purus faucibus ornare suspendisse sed nisi. Viverra suspendisse potenti nullam ac tortor. Mauris commodo quis imperdiet massa tincidunt. Turpis egestas pretium aenean pharetra magna.</p>
-                </div>
-                <div class="col-4">
-                  <img src="./about.png" class="rounded float-end img-fluid" alt="...">
-                </div>
-              </div>
-
-            </a>
-          </div>
-
         </div>
 
         <!-- 1/3 column -->
         <div class="col-4">
           <div class="container">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Aenean pharetra magna ac placerat. Mattis pellentesque id nibh tortor id aliquet. Amet est placerat in egestas. Tincidunt dui ut ornare lectus sit amet est placerat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Aenean pharetra magna ac placerat. Mattis pellentesque id nibh tortor id aliquet. Amet est placerat in egestas. Tincidunt dui ut ornare lectus sit amet est placerat.
+            <h3>References and Additional Resources</h3>
+            <p>Paper on Conversion</p>
           </div>
           <hr>
           <p class="lead">Have any feedback? Any issues? Email us at email@email.com.</p>
         </div>
+
       </div>
 
     </div>

@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lessons Home</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+  <!-- MathJax script for rendering LaTeX math representation-->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
+  <!-- navbar -->
+  <nav class="navbar fixed-top" style="background-color:#1300B3;">
+    <div class="container-fluid">
+      <a class="navbar-brand mb-1 h1 text-white" href="./whatjacobwanted.html">Convert+</a>
+
+      <button class="navbar-toggler bg-white" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Site Menu</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+
+        <!-- off canvas menu -->
+        <div class="offcanvas-body">
+          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="./whatjacobwanted.html">Home</a>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Converters
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Euler to Quaternion</a></li>
+                <li><a class="dropdown-item" href="#">Quaternion to Euler</a></li>
+                <hr>
+                <li><a class="dropdown-item" href="./converterhome.html">Converters Home</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Learn
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="./IntroToVectors.html">1. Intro to Vectors</a></li>
+                <li><a class="dropdown-item" href="./IntroToMatrices.html">2. Intro to Matrices</a></li>
+                <li><a class="dropdown-item" href="./BasicMatrixOperations.html">3. Basic Matrix Operations</a></li>
+                <li><a class="dropdown-item" href="./TraceDetInverse.html">4. The Trace, Determinant, and Inverse</a></li>
+                <li><a class="dropdown-item" href="./SpecialTrigIdentities.html">5. Special Trig Identities</a></li>
+                <li><a class="dropdown-item" href="./ImaginaryNumbers.html">6. Imaginary Numbers/Complex Plane</a></li>
+                <li><a class="dropdown-item" href="./quaternions.html">7. Quaternions</a></li>
+                <li><a class="dropdown-item" href="./3DRotation.html">8. 3D Rotation</a></li>
+                <li><a class="dropdown-item" href="./eulertomatrix.html">9. Euler Angles to Rotation Matrices</a></li>
+                <li><a class="dropdown-item" href="./matrixtoquaternion.html">10. Rotation Matrices to Quaternions</a></li>
+                <li><a class="dropdown-item" href="./helpeulertoquaternion.html">11. Euler Angles to Quaternions</a></li>
+                <li><a class="dropdown-item" href="./helpquaterniontoeuler.html">12. Quaternions to Euler Angles</a></li>
+                <li><a class="dropdown-item" href="./gimballock.html">13. Euler Angles and Gimbal Lock</a></li>
+                <hr>
+                <li><a class="dropdown-item" href="./help.html">Lessons Home</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="./about.html">About Us</a>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <div class="container">
+      <div class="row my-5 g-5">
+        <div class="col-12">
+
+          <div class="container">
+            <h1 class="display-4">Learning Doesn't Have to be Painful.</h1>
+          </div>
+
+        </div>
+
+        <!-- 2/3 column -->
+        <div class="col-8 border-end">
+
+          <div class="container">
+            <div class="accordion" id="accordionExample">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    Beginner Lessons
+                  </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+
+                    <a class="text-decoration-none text-reset" href="./IntroToVectors.html">
+                      <div class="container">
+                        <h3>Lesson 1: Introduction to Vectors</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vulputate mi sit amet mauris. Egestas dui id ornare arcu odio ut. Purus faucibus ornare suspendisse sed nisi. Viverra suspendisse potenti nullam ac tortor. Mauris commodo quis imperdiet massa tincidunt. Turpis egestas pretium aenean pharetra magna.</p>
+                      </div>
+                    </a>
+
+                    <a class="text-decoration-none text-reset" href="./IntroToMatrices.html">
+                      <div class="container mt-5">
+                        <h3>Lesson 2: Introduction to Matrices</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vulputate mi sit amet mauris. Egestas dui id ornare arcu odio ut. Purus faucibus ornare suspendisse sed nisi. Viverra suspendisse potenti nullam ac tortor. Mauris commodo quis imperdiet massa tincidunt. Turpis egestas pretium aenean pharetra magna.</p>
+                      </div>
+                    </a>
+
+                    <a class="text-decoration-none text-reset" href="./BasicMatrixOperations.html">
+                      <div class="container mt-5">
+                        <h3>Lesson 3: Basic Matrix Operations</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vulputate mi sit amet mauris. Egestas dui id ornare arcu odio ut. Purus faucibus ornare suspendisse sed nisi. Viverra suspendisse potenti nullam ac tortor. Mauris commodo quis imperdiet massa tincidunt. Turpis egestas pretium aenean pharetra magna.</p>
+                      </div>
+                    </a>
+
+                    <a class="text-decoration-none text-reset" href="./TraceDetInverse.html">
+                      <div class="container mt-5">
+                        <h3>Lesson 4: The Trace, Determinant, and Inverse</h3>
+                        <p>Lesson coming soon!</p>
+                      </div>
+                    </a>
+
+                    <a class="text-decoration-none text-reset" href="./SpecialTrigIdentities.html">
+                      <div class="container mt-5">
+                        <h3>Lesson 5: Special Trig Identities</h3>
+                        <p>Lesson coming soon!</p>
+                      </div>
+                    </a>
+
+                    <a class="text-decoration-none text-reset" href="./ImaginaryNumbers.html">
+                      <div class="container mt-5">
+                        <h3>Lesson 6: Imaginary Numbers and the Complex Plane</h3>
+                        <p>Lesson coming soon!</p>
+                      </div>
+                    </a>
+
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwo">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    Advanced Lessons
+                  </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+
+                    <a class="text-decoration-none text-reset" href="./quaternions.html">
+                      <div class="container">
+                        <h3>Lesson 7: Quaternions</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vulputate mi sit amet mauris. Egestas dui id ornare arcu odio ut. Purus faucibus ornare suspendisse sed nisi. Viverra suspendisse potenti nullam ac tortor. Mauris commodo quis imperdiet massa tincidunt. Turpis egestas pretium aenean pharetra magna.</p>
+                      </div>
+                    </a>
+
+                    <a class="text-decoration-none text-reset" href="./3DRotation.html">
+                      <div class="container mt-5">
+                        <h3>Lesson 8: 3D Rotation</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vulputate mi sit amet mauris. Egestas dui id ornare arcu odio ut. Purus faucibus ornare suspendisse sed nisi. Viverra suspendisse potenti nullam ac tortor. Mauris commodo quis imperdiet massa tincidunt. Turpis egestas pretium aenean pharetra magna.</p>
+                      </div>
+                    </a>
+
+                    <a class="text-decoration-none text-reset" href="./eulertomatrix.html">
+                      <div class="container mt-5">
+                        <h3>Lesson 9: Euler Angles to Rotation Matrices</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vulputate mi sit amet mauris. Egestas dui id ornare arcu odio ut. Purus faucibus ornare suspendisse sed nisi. Viverra suspendisse potenti nullam ac tortor. Mauris commodo quis imperdiet massa tincidunt. Turpis egestas pretium aenean pharetra magna.</p>
+                      </div>
+                    </a>
+
+                    <a class="text-decoration-none text-reset" href="./matrixtoquaternion.html">
+                      <div class="container mt-5">
+                        <h3>Lesson 10: Rotation Matrices to Quaternions</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vulputate mi sit amet mauris. Egestas dui id ornare arcu odio ut. Purus faucibus ornare suspendisse sed nisi. Viverra suspendisse potenti nullam ac tortor. Mauris commodo quis imperdiet massa tincidunt. Turpis egestas pretium aenean pharetra magna.</p>
+                      </div>
+                    </a>
+
+                    <a class="text-decoration-none text-reset" href="./helpeulertoquaternion.html">
+                      <div class="container mt-5">
+                        <h3>Lesson 11: Conversions from Euler Angles to Quaternions</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vulputate mi sit amet mauris. Egestas dui id ornare arcu odio ut. Purus faucibus ornare suspendisse sed nisi. Viverra suspendisse potenti nullam ac tortor. Mauris commodo quis imperdiet massa tincidunt. Turpis egestas pretium aenean pharetra magna.</p>
+                      </div>
+                    </a>
+
+                    <a class="text-decoration-none text-reset" href="./helpquaterniontoeuler.html">
+                      <div class="container mt-5">
+                        <h3>Lesson 12: Conversions from Quaternions to Euler Angles</h3>
+                        <p>Lesson coming soon!</p>
+                      </div>
+                    </a>
+
+                    <a class="text-decoration-none text-reset" href="./gimballock.html">
+                      <div class="container mt-5">
+                        <h3>Lesson 13: Euler Angles and Gimbal Lock</h3>
+                        <p>Lesson coming soon!</p>
+                      </div>
+                    </a>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+
+        <!-- 1/3 column -->
+        <div class="col-4">
+
+          <div class="container">
+            <h3>References and Additional Resources</h3>
+            <p><a target="_blank" href="https://psx.arthus.net/gamedev/quaternion-tutorial-2-0-1.pdf"><i>A Tutorial on Euler Angles and Quaternions</i></a></p>
+            <p><a target="_blank" href="https://ntrs.nasa.gov/citations/19770019231"><i>Euler angles, quaternions, and transformation matrices for space shuttle analysis</i></a></p>
+            <p><a target="_blank" href="https://www.youtube.com/watch?v=zc8b2Jo7mno">"Quaternions and 3d rotation, explained interactively"</a></p>
+            <p><a target="_blank" href="https://www.youtube.com/watch?v=d4EgbgTm0Bg">"Visualizing quaternions(4d numbers) with stereographic projection"</a></p>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </main>
+</body>
+</html>

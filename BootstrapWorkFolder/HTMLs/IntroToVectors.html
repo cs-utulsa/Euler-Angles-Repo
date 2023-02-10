@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Convert+ Home</title>
+  <title>Lesson: Vectors</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 
   <!-- MathJax script for rendering LaTeX math representation-->
@@ -87,58 +87,28 @@
         <!-- 2/3 column -->
         <div class="col-8 border-end">
           <div class="container">
-            <h1 class="display-4">Quirky Tag Line. Right Here.</h1>
+            <h1>Introduction to Vectors</h1>
+          </div>
+
+          <div class="container">
+            <strong>Definition of a Vector</strong>
+            <p>A vector is a quantity that represents both magnitude and direction. It is geometrically represented as a line segment with an arrow at its head indicating the direction.</p>
+            <!-- Image here -->
+            <p>Vectors are often denoted with boldface letters or with arrows over the letters \((\vec{a})\). The magnitude of the vector \(\boldsymbol{a}\) would be represented as such: \(\|\boldsymbol{a}\|\). In the picture below, vector \(\boldsymbol{a}\) is represented by the blue arrow. Its magnitude is represented by the red arrow, while its direction is represented by the green arrow. A number that is not a vector is called a scalar, so the magnitude itself would be considered a scalar, as it is simply a quantity that describes the vector.</p>
+            <!-- Image here -->
+            <p>No matter where vector \(\boldsymbol{a}\) is positioned on the coordinate system, its magnitude and direction do not change, so the blue arrow could be picked up and moved to another place, and it would remain the same. However, if the arrow was stretched out further or the head was rotated around, then the magnitude and direction would change to reflect a new vector.</p>
+
           </div>
 
           <div class="container mt-5">
-            <a class="text-decoration-none text-reset" href="./converterhome.html">
-
-              <div class="row">
-                <div class="col-8">
-                  <h3>Converters</h3>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vulputate mi sit amet mauris. Egestas dui id ornare arcu odio ut. Purus faucibus ornare suspendisse sed nisi. Viverra suspendisse potenti nullam ac tortor. Mauris commodo quis imperdiet massa tincidunt. Turpis egestas pretium aenean pharetra magna.</p>
-                </div>
-                <div class="col-4">
-                  <img src="./convert.png" class="rounded float-end img-fluid" alt="...">
-                </div>
-              </div>
-              
-            </a>
+            <strong>Vectors in the 3D Coordinate System</strong>
+            <p>When a vector is expressed in terms of a coordinate system, it is written as a list of numbers known as coordinates. With the two-dimensional Cartesian coordinate system, a vector \(\boldsymbol{v}\) is represented by two coordinate points known as the \(x\) and \(y\) components: \(\boldsymbol{v}=(v_{1},v_{2})\). Looking back to the image above with the blue arrow representing vector a, it becomes evident that the blue line segment is really the hypotenuse of a right triangle with legs that are a length of 2 and 1.01. The magnitude then would be the length of that line segment, which can be calculated using the Pythagorean Theorem. \[\|\boldsymbol{a}\|=\sqrt{a^2_{1}+a^2_{2}}\] We can expand this idea to three-dimensional space where a vector has three coordinates now. The coordinates of a vector can be determined by placing its tail at the origin of the Cartesian coordinate system, like the green line segment below, and finding the coordinates of its head. </p>
+            <!-- Image here -->
+            <p>Just as with the two-dimensional coordinate system, the magnitude of a vector in three-dimensional space can be calculated by the Pythagorean Theorem. The equation to find the magnitude of vector \(\boldsymbol{a}=(a_{1},a_{2},a_{3})\) is as follows: \[\|\boldsymbol{a}\|=\sqrt{a^2_{1}+a^2_{2}+a^2_{3}}\] In lessons to follow, it will be useful to understand the three-dimensional coordinate system and vectors as key components behind representing the rotation of an object in space. </p>
           </div>
 
-          <div class="container">
-
-            <a class="text-decoration-none text-reset" href="./help.html">
-
-              <div class="row">
-                <div class="col-8">
-                  
-                  <h3>Lessons <span class="badge" style="background-color:#FFB019;">New</span></h3>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vulputate mi sit amet mauris. Egestas dui id ornare arcu odio ut. Purus faucibus ornare suspendisse sed nisi. Viverra suspendisse potenti nullam ac tortor. Mauris commodo quis imperdiet massa tincidunt. Turpis egestas pretium aenean pharetra magna.</p>
-                </div>
-                <div class="col-4">
-                  <img src="./learn.png" class="rounded float-end img-fluid" alt="...">
-                </div>
-              </div>
-
-            </a>
-          </div>
-
-          <div class="container">
-
-            <a class="text-decoration-none text-reset" href="./about.html">
-
-              <div class="row">
-                <div class="col-8">
-                  <h3>About Us</h3>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vulputate mi sit amet mauris. Egestas dui id ornare arcu odio ut. Purus faucibus ornare suspendisse sed nisi. Viverra suspendisse potenti nullam ac tortor. Mauris commodo quis imperdiet massa tincidunt. Turpis egestas pretium aenean pharetra magna.</p>
-                </div>
-                <div class="col-4">
-                  <img src="./about.png" class="rounded float-end img-fluid" alt="...">
-                </div>
-              </div>
-
-            </a>
+          <div class="container mt-5">
+            <a href="IntroToMatrices.html"><button class="btn btn-primary me-md-2" type="button" style="background-color:#1300B3;">Next Lesson</button></a>
           </div>
 
         </div>
@@ -146,7 +116,8 @@
         <!-- 1/3 column -->
         <div class="col-4">
           <div class="container">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Aenean pharetra magna ac placerat. Mattis pellentesque id nibh tortor id aliquet. Amet est placerat in egestas. Tincidunt dui ut ornare lectus sit amet est placerat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Aenean pharetra magna ac placerat. Mattis pellentesque id nibh tortor id aliquet. Amet est placerat in egestas. Tincidunt dui ut ornare lectus sit amet est placerat.
+            <h3>References and Additional Resources</h3>
+            <a href="https://mathinsight.org/vector_introduction" target="_blank">Math Insight - Vector Introduction</a>
           </div>
           <hr>
           <p class="lead">Have any feedback? Any issues? Email us at email@email.com.</p>
