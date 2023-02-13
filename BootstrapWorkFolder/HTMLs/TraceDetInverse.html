@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Template</title>
+  <title>Lesson: Trace, Determinant, Inverse</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 
   <!-- MathJax script for rendering LaTeX math representation-->
@@ -90,9 +90,42 @@
           <div class="container">
             <h1>The Trace, Determinant, and Inverse</h1>
           </div>
+
           <div class="container">
-            <!-- main content starts here -->
+            <strong>The Inverse of a Matrix</strong>
+            <p>As discussed in the previous lesson, the number 1 is the identity for the multiplication of real numbers. The inverse, \(x^{-1}\), of a real number \(x\), in terms of multiplication, is a number such that when \(x\) is multiplied by \(x^{-1}\), the result is the identity, 1. For example, the inverse of the number 3 is \(\frac{1}{3}\).</p>
+            <p>Following along with this same concept, it would then follow that the inverse of a matrix \(A\), would be such that when multiplied by \(A\), the result is an identity matrix. However, not every matrix has an inverse, and if a matrix does have an inverse, then it must have an equal number of rows and columns, and a non-zero determinant, which will be discussed in greater detail below. Matrices that have a determinant equal to zero are said to be singular matrices, and so a matrix with an inverse must be non-singular.</p>
+            <p>If a matrix, \(A\), has an inverse, \(A^{-1}\), the following formula can be used to calculate this inverse: \[A^{-1}=\frac{1}{\det(A)}\text{adj}(A)\]Note that \(\det(A)\) means the determinant of \(A\), and \(\text{adj}(A)\) means the adjoint of \(A\). The adjoint of a matrix is the transpose of the matrix of cofactors. The transpose is discussed below, but to learn more about the matrix of cofactors, take a look at the following resource: <a href="https://www.cuemath.com/algebra/cofactor-matrix/" target="_blank">Cofactor Matrices</a></p>
+            <p>Lastly, it is important to note that matrices and their inverses have this special property: \[AA^{-1}=A^{-1}A=I\]</p>
           </div>
+
+          <div class="container mt-5">
+            <strong>The Determinant of a Matrix</strong>
+            <p>The determinant of a matrix, which is a number, exists only if the matrix has an equal number of rows and columns, and it is very useful within linear algebra and multivariable calculus. For \(1\times 1\) matrices, the determinant is simply that one number of the matrix. To calculate the determinant of a \(2\times 2\) matrix, the following formula can be used: \[\det\begin{pmatrix} a &b \\ c &d \end{pmatrix}=ad-bc\]</p>
+            <p>This formula is simple enough, but calculating the determinant of matrices with larger dimensions becomes more difficult. This is the formula for a matrix of 3 rows and 3 columns:
+              \[\det\begin{pmatrix} a &b &c \\ d &e &f \\ g &h &i \end{pmatrix}=a\cdot\det\begin{pmatrix} e &f \\ h &i \end{pmatrix}-b\cdot\det\begin{pmatrix} d &f \\ g &i \end{pmatrix}+c\cdot\det\begin{pmatrix} d &e \\ g &h \end{pmatrix}\]
+              \[=aei-afh-bdi+bfg+cdh-ceg\]
+            </p>
+            <p>While there is a general pattern for calculating the determinant of increasingly larger matrices, we suggest using a calculator to perform this operation.</p>
+          </div>
+
+          <div class="container mt-5">
+            <strong>The Transpose of a Matrix</strong>
+            <p>The transpose \(A^{T}\) of a matrix \(A\) is found by switching the rows and columns of that matrix such that it is a flipped form of \(A\). For example, if
+              \[A=\begin{pmatrix} a &b &c \\ d &e &f \end{pmatrix}\]
+              Then the transpose of \(A\) is
+              \[A^{T}=\begin{pmatrix} a &d \\ b &e \\ c &f \end{pmatrix}\]
+            </p>
+          </div>
+
+          <div class="container mt-5">
+            <strong>The Trace of a Matrix</strong>
+            <p>The trace of a matrix is simply the sum of its diagonal elements. The following example demonstrates how to calculate the trace of a matrix \(A\).
+              \[A=\begin{pmatrix} a &b &c \\ d &e &f \\ g &h &i \end{pmatrix}\]
+              \[\text{Trace}(A)=a+e+i\]
+            </p>
+          </div>
+
           <div class="container mt-5">
             <a href="./BasicMatrixOperations.html"><button class="btn btn-primary me-md-2" type="button" style="background-color:#1300B3;">Previous Lesson</button></a>
             <a href="./SpecialTrigIdentities.html"><button class="btn btn-primary me-md-2" type="button" style="background-color:#1300B3;">Next Lesson</button></a>
@@ -102,7 +135,13 @@
         <!-- 1/3 column -->
         <div class="col-4">
           <div class="container">
-
+            <h3>References and Additional Resources</h3>
+            <p><a href="https://www.cuemath.com/algebra/cofactor-matrix/">CueMath: Cofactor Matrix</a></p>
+            <p><a href="https://builtin.com/data-science/basic-linear-algebra-deep-learning" target="_blank">Linear Algebra and Deep Learning</a></p>
+            <p><a href="https://www.mathcentre.ac.uk/resources/uploaded/sigma-matrices7-2009-1.pdf" target="_blank">MathCentre - 2x2 Matrix Inversion</a></p>
+            <p><a href="https://www.mathcentre.ac.uk/resources/uploaded/sigma-matrices11-2009-1.pdf" target="_blank">MathCentre - 3x3 Matrix Inversion</a></p>
+            <p><a href="https://mathinsight.org/matrices_determinants_multivariable_calculus" target="_blank">Math Insight - Determinants</a></p>
+            <p><a href="https://mathinsight.org/matrix_transpose" target="_blank">Math Insight - Transpose of a Matrix</a></p>
           </div>
           <hr>
           <p class="lead">Have any feedback? Any issues? Email us at email@email.com.</p>
