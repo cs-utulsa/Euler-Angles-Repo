@@ -78,10 +78,10 @@
             <div class="container">
               <div class="row d-flex justify-content-center py-2 py-xl-1">
                   
-                  <div class="col-md-3 offset-lg-0"><input type="number" class="form-control" type="number" name="x-axis" placeholder="X-axis"  required = "required" style="background-color:#d7d5f0;" /></div>
-                  <div class="col-md-3"><input class="form-control" type="number" name="Y-axis" placeholder="Y-axis"  required = "required" style="background-color:#d7d5f0;"/></div>
-                  <div class="col-md-3"><input class="form-control" type="number" name="Z-axis" placeholder="Z-axis"  required = "required"  style="background-color:#d7d5f0;"/></div>
-                  <div class="col-md-3"><input class="form-control" type="number" name="W" placeholder="W"  required = "required" style="background-color:#d7d5f0;"/></div>
+                  <div class="col-md-3 offset-lg-0"><input type="number" class="form-control" type="number" name="x-axis" id="xAxisInput" placeholder="X-axis"  required = "required" style="background-color:#d7d5f0;" /></div>
+                  <div class="col-md-3"><input class="form-control" type="number" name="Y-axis" id="yAxisInput" placeholder="Y-axis"  required = "required" style="background-color:#d7d5f0;"/></div>
+                  <div class="col-md-3"><input class="form-control" type="number" name="Z-axis" id="zAxisInput" placeholder="Z-axis"  required = "required"  style="background-color:#d7d5f0;"/></div>
+                  <div class="col-md-3"><input class="form-control" type="number" name="W" id="wAxisInput" placeholder="W"  required = "required" style="background-color:#d7d5f0;"/></div>
               </div>
               <div class=" card-title"> <h3>Rotation Matrix:</h3></div> <!--Line of text-->
                   <!--Rotation matrix input in float-->
@@ -103,7 +103,7 @@
              </div>
              <p style="margin-bottom:2.5em"></p> <!--space line (like tab)-->
              <!--button-->
-             <button class="btn btn-primary" type="button">Calculate</button>
+             <button class="btn btn-primary" id="btn1" type="button">Calculate</button>
 
              <p style="margin-bottom:2.5em"></p> <!--space line (like tab)-->          
                         
@@ -136,10 +136,16 @@
         </div> 
         
         </div>
-       
+
+       <!--the variables of the inputs W X Y Z and the button-->
         <script>
           
-          let xAxisEuler = document.getElementById("output1");
+          let xAxisEuler = document.getElementById('xAxisInput');
+          let yAxisEuler = document.getElementById('yAxisInput');
+          let zAxisEuler = document.getElementById('zAxisInput');
+          let wAxisEuler = document.getElementById('wAxisInput');
+          
+          let btn1 = document.getElementById('btn1') 
           function fun1() {
             xAxisEuler.innerHTML = "0.0";
           }
