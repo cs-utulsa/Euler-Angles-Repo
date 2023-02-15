@@ -39,7 +39,7 @@
 			scene.add( axesHelper );
 
 			const renderer = new THREE.WebGLRenderer( { alpha: true } );
-			renderer.setSize( 400, 400 );
+			renderer.setSize( 800, 800 );
 			container = document.getElementById( 'RenderContainer' );
 			container.appendChild(renderer.domElement);
 

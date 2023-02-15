@@ -49,6 +49,7 @@
   </nav>
 <!--main-->
   <main>
+    <div class = "column">
     <script src = "https://cdnjs.com/libraries/mathjs"></script>
     <div class="container">
       <div class="row my-5 g-5">
@@ -96,27 +97,8 @@
                 <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio6" value="YXZ"> <label class="form-check-label" for="inlineRadio6">YXZ </label>
               </div>
             </div>
-        <!--Check Inline The Second row-->
-              <!-- <div class="col-md-13 py-2 py-xl-5">
-                <div class="col offset-lg-0 form-check form-check-inline ">
-                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio7" value="ZXZ"> <label class="form-check-label" for="inlineRadio7">ZXZ</label>
-                </div>
-                <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio8" value="XYX"> <label class="form-check-label" for="inlineRadio8">XYX</label>
-                </div>
-                <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio9" value="YZY"> <label class="form-check-label" for="inlineRadio9">YZY</label>
-                </div>
-                <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio10" value="ZYZ"> <label class="form-check-label" for="inlineRadio10">ZYZ</label>
-                </div>
-                <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio11" value="XZX"> <label class="form-check-label" for="inlineRadio11">XZX</label>
-                </div>
-                <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio12" value="YXY"> <label class="form-check-label" for="inlineRadio12">YXY </label>
-                </div>
-              </div> -->
+
+              <p style="margin-bottom:2.5em"></p>
               <button class="btn btn-primary" required = "required" id="btn1" type="button">Calculate</button>
               <p style="margin-bottom:2.5em"></p> <!--space line (like tab)-->
             </div>
@@ -185,15 +167,10 @@
               
         </div>
         <p style="margin-bottom:6.5em"></p>  <!--space line (like tab)-->
-
+      </div>
         <!--right side (third third)-->
         <div class="col-4">
-          <div class="container">
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.js"></script>
-          <script src="EulerToQuat.js"></script> 
-            <!--Area for rotation-->
-
-            <div id = "RenderContainer">
+            <div id = "RenderContainer" class = "container-fluid">
               <a class="text-decoration-none text-rese " href="#">
                 <h3>Rotation</h3>
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.js"></script>
@@ -201,7 +178,6 @@
               </a>
             </div>
           
-                    
             <!--blah blah text-->
             <div class="container mt-5">
                 <a class="text-decoration-none text-reset" href="#">

@@ -1,3 +1,11 @@
+
+
+
+
+//DEPRECIATED
+
+
+
 function EulerToQuat(){
     const Xbox = document.getElementById("X-axis");
     const Ybox = document.getElementById("Y-axis");
@@ -55,44 +63,6 @@ function EulerToQuat(){
     
     const cosZ = Math.cos(z);
     const sinZ = Math.sin(z);
-
-    if(order == 'XZY'){
-
-      rotationMatrix[0] = new Array(cosZ * cosY, -1 * sinZ, cosZ*sinY);
-      rotationMatrix[1] = new Array(sinX*sinY + cosX*cosY*sinZ, cosX*cosZ, cosX*cosZ*cosY - cosY*sinX);
-      rotationMatrix[2] = new Array(cosY*sinX*sinZ - cosX*sinY, cosZ*sinX, cosX*cosY + sinX*sinZ*sinY);
-
-    }else if(order == 'XYZ'){
-
-      rotationMatrix[0] = new Array(cosY*cosZ, -1*cosY*cosZ, sinY);
-      rotationMatrix[1] = new Array(cosX*sinZ + cosZ*sinX*sinY, cosX*cosZ - sinX*sinY*sinZ, -1*cosY*sinX);
-      rotationMatrix[2] = new Array(sinX*sinZ - cosX*cosZ*sinY, cosZ*sinX + cosX*sinY*sinZ, cosX*cosY);
-
-    }else if(order == 'YXZ'){
-      
-      rotationMatrix[0] = new Array(cosY*cosZ + sinY*sinX*sinZ, cosZ*sinY*sinX - cosY*sinZ, cosX*sinY);
-      rotationMatrix[1] = new Array(cosX*sinZ, cosX*cosZ, -1*sinX);
-      rotationMatrix[2] = new Array(cosY*sinX*sinZ - cosZ*sinY, cosY*sinZ*sinX + sinY*sinZ, cosY*cosX);
-
-    }else if(order == 'YZX'){
-
-      rotationMatrix[0] = new Array(cosY*cosZ, sinY*sinX - cosY*cosX*sinZ, cosX*sinY + cosY*sinZ*sinX);
-      rotationMatrix[1] = new Array(sinZ, cosZ*cosX, -1*cosZ*sinX);
-      rotationMatrix[2] = new Array(-1*cosZ*sinY, cosY*sinX + cosX*sinY*sinZ, cosY*cosX - sinY*sinZ*sinX);
-
-    }else if(order == 'ZYX'){
-
-      rotationMatrix[0] = new Array(cosZ*cosY, cosZ*sinY*sinX - cosX*sinZ, sinZ*sinX + cosZ*cosX*sinY);
-      rotationMatrix[1] = new Array(cosY*sinZ, cosZ*cosX + sinZ*sinY*sinX, cosX*sinZ*sinY - cosZ*sinX);
-      rotationMatrix[2] = new Array(-1*sinY, cosY*sinX, cosY*cosX);
-
-    }else if(order == 'ZXY'){
-
-      rotationMatrix[0] = new Array(cosZ*cosY - sinZ*sinX*sinY, -1*cosX*sinZ, cosZ*sinY + cosY*sinZ*sinX);
-      rotationMatrix[1] = new Array(cosY*sinZ + cosZ*sinX*sinY, cosZ*cosX, sinZ*sinY - cosZ*cosY*sinX);
-      rotationMatrix[2] = new Array(-1*cosX*sinY, sinX, cosX*cosY);
-
-    }
 
     for (var i = 0, row; row = displayMatrix.rows[i+1]; i++) { //displaying the values
       for (var j = 0, col; col = row.cells[j]; j++) {
