@@ -1,4 +1,4 @@
-function EulerToQuat() {
+function EulerToQuat(){
     const Xbox = document.getElementById("X-axis");
     const Ybox = document.getElementById("Y-axis");
     const Zbox = document.getElementById("Z-axis");
