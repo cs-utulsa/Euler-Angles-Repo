@@ -49,6 +49,7 @@
   </nav>
 <!--main-->
   <main>
+    <script src = "https://cdnjs.com/libraries/mathjs"></script>
     <div class="container">
       <div class="row my-5 g-5">
         <div class="col-8 border-end">
@@ -68,9 +69,9 @@
           <section class="container text-center mx-auto"></section>
           <div class="container">
             <div class="row d-flex justify-content-center">
-                <div class="col-md-4 offset-lg-0"><input type="number" class="form-control" type="number" name="x-axis" placeholder="X-axis" id="X-axis" required = "required" style="background-color:#d7d5f0;" /></div>
-                <div class="col-md-4"><input class="form-control" type="number" name="Y-axis" placeholder="Y-axis"  required = "required" id="Y-axis" style="background-color:#d7d5f0;"/></div>
-                <div class="col-md-4"><input class="form-control" type="number" name="Z-axis" placeholder="Z-axis"  required = "required" id="Z-axis" style="background-color:#d7d5f0;" /></div>
+                <div class="col-md-4 offset-lg-0"><input type="number" class="form-control" type="number" name="x-axis" placeholder="X-axis" id="X-axis" required = "required" style="background-color:#d7d5f0;" value = "0"/></div>
+                <div class="col-md-4"><input class="form-control" type="number" name="Y-axis" placeholder="Y-axis"  required = "required" id="Y-axis" style="background-color:#d7d5f0;" value = "0"/></div>
+                <div class="col-md-4"><input class="form-control" type="number" name="Z-axis" placeholder="Z-axis"  required = "required" id="Z-axis" style="background-color:#d7d5f0;" value = "0"/></div>
             </div>
         </div>          
         <!--Check Inline The first row-->        
@@ -96,7 +97,7 @@
               </div>
             </div>
         <!--Check Inline The Second row-->
-              <div class="col-md-13 py-2 py-xl-5">
+              <!-- <div class="col-md-13 py-2 py-xl-5">
                 <div class="col offset-lg-0 form-check form-check-inline ">
                   <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio7" value="ZXZ"> <label class="form-check-label" for="inlineRadio7">ZXZ</label>
                 </div>
@@ -115,7 +116,7 @@
                 <div class="form-check form-check-inline">
                   <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio12" value="YXY"> <label class="form-check-label" for="inlineRadio12">YXY </label>
                 </div>
-              </div>
+              </div> -->
               <button class="btn btn-primary" required = "required" id="btn1" type="button" onclick="EulerToQuat()">Calculate</button>
               <p style="margin-bottom:2.5em"></p> <!--space line (like tab)-->
             </div>
@@ -149,7 +150,7 @@
             
         </div> 
         <h2>Rotation Matrix:</h2> 
-        <table class="table">        <!-- The Euler results table-->
+        <table name="rotTable" id="rotTab1">        <!-- The Euler results table-->
           <thead>
             <tr>
               <th scope="col"> </th>
@@ -159,16 +160,8 @@
           </thead>
           <tbody>
             <tr>
-              <td>1</td>
               <td>0</td>
               <td>0</td>
-            </tr>          
-          </tbody>
-
-          <tbody>
-            <tr>
-              <td>0</td>
-              <td>1</td>
               <td>0</td>
             </tr>          
           </tbody>
@@ -177,7 +170,15 @@
             <tr>
               <td>0</td>
               <td>0</td>
-              <td>1</td>
+              <td>0</td>
+            </tr>          
+          </tbody>
+
+          <tbody>
+            <tr>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
             </tr>          
           </tbody>
         </table>
