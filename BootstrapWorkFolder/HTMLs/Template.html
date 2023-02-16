@@ -32,22 +32,50 @@
         <div class="offcanvas-body">
           <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="./whatjacobwanted.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="./converterhome.html">Converters</a>
+              <a class="nav-link" aria-current="page" href="./whatjacobwanted.html">Home</a>
             </li>
 
-            <!-- link with dropdown list -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Converters
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="./conversions/EulerAngle.html">Euler to Quaternion</a></li>
+                <li><a class="dropdown-item" href="./conversions/QuaternionAngle.html">Quaternion to Euler</a></li>
+                <hr>
+                <li><a class="dropdown-item" href="./converterhome.html">Converters Home</a></li>
+              </ul>
+            </li>
+
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Learn
               </a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Lesson 1</a></li>
-                <li><a class="dropdown-item" href="#">Lesson 2</a></li>
-                <li><a class="dropdown-item" href="#">Lesson 3 <span class="badge" style="background-color:#FFB019;">New</span></a></li>
+                <li><a class="dropdown-item" href="./IntroToVectors.html">1. Intro to Vectors</a></li>
+                <li><a class="dropdown-item" href="./IntroToMatrices.html">2. Intro to Matrices</a></li>
+                <li><a class="dropdown-item" href="./BasicMatrixOperations.html">3. Basic Matrix Operations</a></li>
+                <li><a class="dropdown-item" href="./TraceDetInverse.html">4. The Trace, Determinant, and Inverse</a></li>
+                <li><a class="dropdown-item" href="./SpecialTrigIdentities.html">5. Special Trig Identities</a></li>
+                <li><a class="dropdown-item" href="./ImaginaryNumbers.html">6. Imaginary Numbers/Complex Plane</a></li>
+                <li><a class="dropdown-item" href="./quaternions.html">7. Quaternions</a></li>
+                <li><a class="dropdown-item" href="./3DRotation.html">8. 3D Rotation</a></li>
+                <li><a class="dropdown-item" href="./eulertomatrix.html">9. Euler Angles to Rotation Matrices</a></li>
+                <li><a class="dropdown-item" href="./matrixtoquaternion.html">10. Rotation Matrices to Quaternions</a></li>
+                <li><a class="dropdown-item" href="./helpeulertoquaternion.html">11. Euler Angles to Quaternions</a></li>
+                <li><a class="dropdown-item" href="./helpquaterniontoeuler.html">12. Quaternions to Euler Angles</a></li>
+                <li><a class="dropdown-item" href="./gimballock.html">13. Euler Angles and Gimbal Lock</a></li>
+                <hr>
+                <li><a class="dropdown-item" href="./help.html">Lessons Home</a></li>
               </ul>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="./about.html">About Us</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="./contactUs.html">Contact Us</a>
             </li>
 
           </ul>
@@ -80,7 +108,7 @@
 
           </div>
           <hr>
-          <p class="lead">Have any feedback? Any issues? Email us at email@email.com.</p>
+          <p class="lead">Have any feedback? Any issues? Email us at tuconvertplus@gmail.com.</p>
         </div>
 
       </div>
