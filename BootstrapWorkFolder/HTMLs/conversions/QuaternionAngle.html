@@ -114,23 +114,30 @@
                   <div class="col-md-3"><input class="form-control" type="number" name="Z-axis" id="zAxisInput" placeholder="Z-axis"  required = "required"  style="background-color:#d7d5f0;"/></div>
                   <div class="col-md-3"><input class="form-control" type="number" name="W" id="wAxisInput" placeholder="W"  required = "required" style="background-color:#d7d5f0;"/></div>
               </div>
-              <div class=" card-title"> <h3>Rotation Matrix:</h3></div> <!--Line of text-->
-                  <!--Rotation matrix input in float-->
-                  <!-- name Needs to be changed-->
-              <div class="container">
-                <div class="row d-flex justify-content-center py-2 py-xl-2">
-                    
-                    <div class="col-md-4 offset-lg-0"><input type="number" step="0.01"class="form-control" type="number" name="0.00" placeholder="0.00" style="background-color:#d7d5f0;" /></div>
-                    <div class="col-md-4"><input class="form-control" type="number" step="0.01" name="Y-axis" placeholder="0.00"  style="background-color:#d7d5f0;"/></div>
-                    <div class="col-md-4"><input class="form-control" type="number" step="0.01" name="Z-axis" placeholder="0.00"  style="background-color:#d7d5f0;"/></div>
-                    <div class="col-md-4"><input class="form-control" type="number" step="0.01" name="W" placeholder="0.00"  style="background-color:#d7d5f0;"/></div>
-                    <div class="col-md-4"><input class="form-control" type="number" step="0.01" name="W" placeholder="0.00"  style="background-color:#d7d5f0;"/></div>
-                    <div class="col-md-4"><input class="form-control" type="number" step="0.01" name="W" placeholder="0.00"  style="background-color:#d7d5f0;"/></div>
-                    <div class="col-md-4"><input class="form-control" type="number" step="0.01" name="W" placeholder="0.00"  style="background-color:#d7d5f0;"/></div>
-                    <div class="col-md-4"><input class="form-control" type="number" step="0.01" name="W" placeholder="0.00"  style="background-color:#d7d5f0;"/></div>
-                    <div class="col-md-4"><input class="form-control" type="number" step="0.01" name="W" placeholder="0.00"  style="background-color:#d7d5f0;"/></div> 
-                </div>
+
+                      <!--Check Inline The first row-->        
+           <section class="py-3 py-xl-3 mx-auto col-md-12"></section>
+           <div class="col-md-13"> <!--What makes the first row-->
+              <div class="col offset-lg-0 form-check form-check-inline ">                
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="XYZ"> <label class="form-check-label" for="inlineRadio1">XYZ</label>
               </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="YZX"> <label class="form-check-label" for="inlineRadio2">YZX</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="ZXY"> <label class="form-check-label" for="inlineRadio3">ZXY </label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="XZY"> <label class="form-check-label" for="inlineRadio4">XZY </label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio5" value="ZYX"> <label class="form-check-label" for="inlineRadio5">ZYX </label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio6" value="YXZ"> <label class="form-check-label" for="inlineRadio6">YXZ </label>
+              </div>
+            </div>
+
              </div>
              <p style="margin-bottom:2.5em"></p> <!--space line (like tab)-->
              <!--button-->
@@ -163,8 +170,42 @@
                 </tr>
               
               </tbody>
-            </table>            
-        </div> 
+            </table>    
+
+        </div>
+        <h2>Rotation Matrix:</h2> 
+        <table name="rotTable" id="rotTab1">        <!-- The Euler results table-->
+          <thead>
+            <tr>
+              <th scope="col"> </th>
+              <th scope="col"> </th>
+              <th scope="col"> </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+            </tr>          
+          </tbody>
+
+          <tbody>
+            <tr>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+            </tr>          
+          </tbody>
+
+          <tbody>
+            <tr>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+            </tr>          
+          </tbody>
+        </table> 
         
         </div>
 
