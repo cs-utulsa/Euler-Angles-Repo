@@ -18,8 +18,8 @@ function EulerToQuat(){
         order = ele[i].value;
       }
 
-    const Quaternion = new THREE.Quaternion(x, y, z, order);
-    const Euler = new THREE.Euler().setFromQuaternion(Quaternion);
+    const Quaternion = new THREE.Quaternion(x, y, z, w);
+    const Euler = new THREE.Euler().setFromQuaternion(Quaternion, order);
 
     const xEul = document.getElementById("Xeul");
     const yEul = document.getElementById("Yeul");
