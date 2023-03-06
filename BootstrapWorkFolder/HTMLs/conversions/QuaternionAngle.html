@@ -120,29 +120,29 @@
            <section class="py-3 py-xl-3 mx-auto col-md-12"></section>
            <div class="col-md-13"> <!--What makes the first row-->
               <div class="col offset-lg-0 form-check form-check-inline ">                
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="XYZ"> <label class="form-check-label" for="inlineRadio1">XYZ</label>
+                <input class="form-check-input" type="radio" name="QinlineRadioOptions" id="inlineRadio1" value="XYZ"> <label class="form-check-label" for="inlineRadio1">XYZ</label>
               </div>
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="YZX"> <label class="form-check-label" for="inlineRadio2">YZX</label>
+                <input class="form-check-input" type="radio" name="QinlineRadioOptions" id="inlineRadio2" value="YZX"> <label class="form-check-label" for="inlineRadio2">YZX</label>
               </div>
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="ZXY"> <label class="form-check-label" for="inlineRadio3">ZXY </label>
+                <input class="form-check-input" type="radio" name="QinlineRadioOptions" id="inlineRadio3" value="ZXY"> <label class="form-check-label" for="inlineRadio3">ZXY </label>
               </div>
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="XZY"> <label class="form-check-label" for="inlineRadio4">XZY </label>
+                <input class="form-check-input" type="radio" name="QinlineRadioOptions" id="inlineRadio4" value="XZY"> <label class="form-check-label" for="inlineRadio4">XZY </label>
               </div>
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio5" value="ZYX"> <label class="form-check-label" for="inlineRadio5">ZYX </label>
+                <input class="form-check-input" type="radio" name="QinlineRadioOptions" id="inlineRadio5" value="ZYX"> <label class="form-check-label" for="inlineRadio5">ZYX </label>
               </div>
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio6" value="YXZ"> <label class="form-check-label" for="inlineRadio6">YXZ </label>
+                <input class="form-check-input" type="radio" name="QinlineRadioOptions" id="inlineRadio6" value="YXZ"> <label class="form-check-label" for="inlineRadio6">YXZ </label>
               </div>
             </div>
 
              </div>
              <p style="margin-bottom:2.5em"></p> <!--space line (like tab)-->
              <!--button-->
-             <button class="btn btn-primary" id="btn1" type="button">Calculate</button>
+             <button class="btn btn-primary" id="btn2" type="button">Calculate</button>
 
              <p style="margin-bottom:2.5em"></p> <!--space line (like tab)-->          
                         
@@ -165,9 +165,9 @@
               </thead>
               <tbody>
                 <tr>
-                  <td id="Xeul">The x value</td>
-                  <td id="Yeul">The y value</td>
-                  <td id="Zeul">The z value</td>
+                  <td id="Xeul">0</td>
+                  <td id="Yeul">0</td>
+                  <td id="Zeul">0</td>
                 </tr>
               
               </tbody>
@@ -175,7 +175,7 @@
 
         </div>
         <h2>Rotation Matrix:</h2> 
-        <table name="rotTable" id="rotTab1">        <!-- The Euler results table-->
+        <table name="rotTable" id="rotTab2">        <!-- The Euler results table-->
           <thead>
             <tr>
               <th scope="col"> </th>
@@ -209,32 +209,28 @@
         </table> 
         
         </div>
+        <p style="margin-bottom:6.5em"></p>  <!--space line (like tab)-->
+        </div>
         <!--right side (third third)-->
         <div class="col-4">
-          <div class="container">
-
-            <!--Area for rotation-->
-          
-          <div id = container>
-              <a class="text-decoration-none text-rese " href="#">
-                <h3>Rotation</h3>
-                <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.js"></script>
-                <script src="render.js"></script>
+          <div id = "RenderContainer1" class = "container-fluid">
+            <a class="text-decoration-none text-rese " href="#">
+              <h3>Rotation</h3>
+              <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.js"></script>
+              <script src="renderQtoE.js"></script>
+            </a>
+          </div>
+        
+          <!--blah blah text-->
+          <div class="container mt-5">
+              <a class="text-decoration-none text-reset" href="#">
+                <img src="./about.png" class="rounded float-end" alt="..." width="200" height="200">
+                <h3>Converters</h3>
+    
+                <p>This is placeholder text.</p>
               </a>
-            </div>
-            
-            
-            
-            <!--blah blah text-->
-            <div class="container mt-5">
-                <a class="text-decoration-none text-reset" href="#">
-                  <img src="./about.png" class="rounded float-end" alt="..." width="200" height="200">
-                  <h3>Converters</h3>
-      
-                  <p>This is placeholder text.</p>
-                </a>
-            </div>     
-        </div>
+          </div>     
+      </div>
 
 
           <hr>
