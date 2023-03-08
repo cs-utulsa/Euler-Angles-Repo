@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+  <!-- THIS IS EULER TO QUATERNION CONVERSION -->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Convert+ Home</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+</head>
+<body>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+  <!--navbar-->
+  <nav class="navbar fixed-top" style="background-color:#1300B3;">
+    <div class="container-fluid">
+      <a class="navbar-brand mb-1 h1 text-white" href="../whatjacobwanted.html">Convert+</a>
+
+      <button class="navbar-toggler bg-white" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Site Menu</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+
+        <!-- off canvas menu -->
+        <div class="offcanvas-body">
+          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="../whatjacobwanted.html">Home</a>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Converters
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="./EulerAngle.html">Euler to Quaternion</a></li>
+                <li><a class="dropdown-item" href="./QuaternionAngle.html">Quaternion to Euler</a></li>
+                <hr>
+                <li><a class="dropdown-item" href="../converterhome.html">Converters Home</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Learn
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="../IntroToVectors.html">1. Intro to Vectors</a></li>
+                <li><a class="dropdown-item" href="../IntroToMatrices.html">2. Intro to Matrices</a></li>
+                <li><a class="dropdown-item" href="../BasicMatrixOperations.html">3. Basic Matrix Operations</a></li>
+                <li><a class="dropdown-item" href="../TraceDetInverse.html">4. The Trace, Determinant, and Inverse</a></li>
+                <li><a class="dropdown-item" href="../SpecialTrigIdentities.html">5. Special Trig Identities</a></li>
+                <li><a class="dropdown-item" href="../ImaginaryNumbers.html">6. Imaginary Numbers/Complex Plane</a></li>
+                <li><a class="dropdown-item" href="../quaternions.html">7. Quaternions</a></li>
+                <li><a class="dropdown-item" href="../3DRotation.html">8. 3D Rotation</a></li>
+                <li><a class="dropdown-item" href="../eulertomatrix.html">9. Euler Angles to Rotation Matrices</a></li>
+                <li><a class="dropdown-item" href="../matrixtoquaternion.html">10. Rotation Matrices to Quaternions</a></li>
+                <li><a class="dropdown-item" href="../helpeulertoquaternion.html">11. Euler Angles to Quaternions</a></li>
+                <li><a class="dropdown-item" href="../helpquaterniontoeuler.html">12. Quaternions to Euler Angles</a></li>
+                <li><a class="dropdown-item" href="../gimballock.html">13. Euler Angles and Gimbal Lock</a></li>
+                <hr>
+                <li><a class="dropdown-item" href="../help.html">Lessons Home</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="../about.html">About Us</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="../contactUs.html">Contact Us</a>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+<!--main-->
+  <main>
+    <div class = "column">
+    <script src = "https://cdnjs.com/libraries/mathjs"></script>
+    <div class="container">
+      <div class="row my-5 g-5">
+        <div class="col-8 border-end">
+
+          <!--Headline-->
+          <div class="container text-center mx-auto">
+            <h1 class="py-2 py-xl-5 display-4">Triangle Solver</h1>
+          </div>
+          <div class="container-fluid card  "> <!-- The box outline-->
+          <div class="py-2 py-xl-5 card-title">
+            <h2>Select Theorem</h2>
+        </div>
+        
+        <!--Check Inline The first row-->        
+        <script src="TriangleSetup.js"></script>
+           <section class="py-3 py-xl-3 mx-auto col-md-12"></section>
+           <div class="col-md-13"> <!--What makes the first row-->
+              <div class="col offset-lg-0 form-check form-check-inline ">                
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="SSS"> <label class="form-check-label" for="inlineRadio1">SSS</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="SAS"> <label class="form-check-label" for="inlineRadio2">SAS</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="ASA"> <label class="form-check-label" for="inlineRadio3">ASA</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="AAS"> <label class="form-check-label" for="inlineRadio4">AAS</label>
+              </div>
+            </div>
+
+              <p style="margin-bottom:2.5em"></p>
+              <button class="btn btn-primary" required = "required" id="btn1" type="button" style="height:100;width:200px" onclick="setup()">Select</button>
+              <p style="margin-bottom:2.5em"></p> <!--space line (like tab)-->
+
+              <!--Row with 3 columus and number input-->
+          <section class="container text-center mx-auto"></section>
+          <div class="container">
+            <div class="row d-flex justify-content-center">
+                <div class="col-md-4 offset-lg-0"><input type="number" class="form-control" type="number" name="Side 1" placeholder="Side 1" id="Component1" required = "required" style="background-color:#d7d5f0;" hidden/></div>
+                <div class="col-md-4"><input class="form-control" type="number" name="Side 2" placeholder="Side 2"  required = "required" id="Component2" style="background-color:#d7d5f0;" hidden/></div>
+                <div class="col-md-4"><input class="form-control" type="number" name="Side 3" placeholder="Side 3"  required = "required" id="Component3" style="background-color:#d7d5f0;" hidden/></div>
+            </div>
+        </div>    
+            </div>
+            
+            
+           
+            <p style="margin-top:6.5em"></p>  <!--space line (like tab)-->
+
+        <div class="container-fluid card margin-top"> <!-- The box outline-->
+          <div class="py-2 py-xl-5 card-title">
+            <h2>Quaternion:</h2> 
+
+            <table class="table">        <!-- The Euler results table-->
+              <thead>
+                <tr>
+                  <th scope="col">X-axis</th>
+                  <th scope="col">Y-axis</th>
+                  <th scope="col">Z-axis</th>
+                  <th scope="col">W-axis</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td id="xQuat"> 0</td>
+                  <td id="yQuat"> 0</td>
+                  <td id="zQuat"> 0</td>
+                  <td id="wQuat"> 0</td>
+                </tr>
+              
+              </tbody>
+            </table>
+            
+        </div> 
+        <h2>Rotation Matrix:</h2> 
+        <table name="rotTable" id="rotTab1">        <!-- The Euler results table-->
+          <thead>
+            <tr>
+              <th scope="col"> </th>
+              <th scope="col"> </th>
+              <th scope="col"> </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+            </tr>          
+          </tbody>
+
+          <tbody>
+            <tr>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+            </tr>          
+          </tbody>
+
+          <tbody>
+            <tr>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+            </tr>          
+          </tbody>
+        </table>
+              
+        </div>
+        <p style="margin-bottom:6.5em"></p>  <!--space line (like tab)-->
+      </div>
+        <!--right side (third third)-->
+        <div class="col-4">
+            <div id = "RenderContainer" class = "container-fluid">
+              <a class="text-decoration-none text-rese " href="#">
+                <h3>Rotation</h3>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.js"></script>
+              </a>
+            </div>
+          
+            <!--blah blah text-->
+            <div class="container mt-5">
+                <a class="text-decoration-none text-reset" href="#">
+                  <img src="./about.png" class="rounded float-end" alt="..." width="200" height="200">
+                  <h3>Converters</h3>
+      
+                  <p>This is placeholder text.</p>
+                </a>
+            </div>     
+        </div>
+
+
+          <hr>
+          <p class="lead">Have any feedback? Any issues? Email us at tuconvertplus@gmail.com.</p>
+        </div>
+      </div>
+
+    </div>
+  </main>
+</body>
+</html>
