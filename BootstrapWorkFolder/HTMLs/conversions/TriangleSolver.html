@@ -97,37 +97,38 @@
         </div>
         
         <!--Check Inline The first row-->        
-        <script src="TriangleSetup.js"></script>
+        <script src="TriangleSolve.js"></script>
            <section class="py-3 py-xl-3 mx-auto col-md-12"></section>
            <div class="col-md-13"> <!--What makes the first row-->
               <div class="col offset-lg-0 form-check form-check-inline ">                
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="SSS"> <label class="form-check-label" for="inlineRadio1">SSS</label>
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="SSS"> <label class="form-check-label" for="inlineRadio1" id="SSS">SSS</label>
               </div>
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="SAS"> <label class="form-check-label" for="inlineRadio2">SAS</label>
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="SAS"> <label class="form-check-label" for="inlineRadio2" id="SAS">SAS</label>
               </div>
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="ASA"> <label class="form-check-label" for="inlineRadio3">ASA</label>
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="ASA"> <label class="form-check-label" for="inlineRadio3" id="ASA">ASA</label>
               </div>
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="AAS"> <label class="form-check-label" for="inlineRadio4">AAS</label>
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="AAS"> <label class="form-check-label" for="inlineRadio4" id="AAS">AAS</label>
               </div>
             </div>
 
               <p style="margin-bottom:2.5em"></p>
-              <button class="btn btn-primary" required = "required" id="btn1" type="button" style="height:100;width:200px" onclick="setup()">Select</button>
+              <button class="btn btn-primary" required = "required" id="select" type="button" style="height:100;width:200px" onclick="setup()">Select</button>
+              <button class="btn btn-primary" required = "required" id="reset" type="button" style="height:100;width:200px" onclick="reset()" hidden>Reset</button>
               <p style="margin-bottom:2.5em"></p> <!--space line (like tab)-->
 
               <!--Row with 3 columus and number input-->
-              <script src="TriangleSolve.js"></script>
           <section class="container text-center mx-auto"></section>
           <div class="container">
             <div class="row d-flex justify-content-center">
+              <label for="html" id="errorLabel" hidden>Error Incorrect Dimensions</label><br>
               <div class="col-md-4 offset-lg-0"><input type="number" class="form-control" type="number" name="Side 1" placeholder="Side 1" id="Component1" required = "required" style="background-color:#d7d5f0;" hidden/></div>
               <div class="col-md-4"><input class="form-control" type="number" name="Side 2" placeholder="Side 2"  required = "required" id="Component2" style="background-color:#d7d5f0;" hidden/></div>
               <div class="col-md-4"><input class="form-control" type="number" name="Side 3" placeholder="Side 3"  required = "required" id="Component3" style="background-color:#d7d5f0;" hidden/></div>
               <p style="margin-bottom:2.5em"></p>
-              <button class="btn btn-primary" required = "required" type="button" style="height:100;width:200px" onclick="solve()">Solve</button>
+              <button class="btn btn-primary" id="solve" required = "required" type="button" style="height:100;width:200px" onclick="solve()" hidden>Solve</button>
               <p style="margin-bottom:2.5em"></p> <!--space line (like tab)-->
             </div>
         </div>    

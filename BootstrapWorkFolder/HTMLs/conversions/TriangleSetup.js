@@ -2,10 +2,11 @@ function setup(){
     var comp1 = document.getElementById("Component1");
     var comp2 = document.getElementById("Component2");
     var comp3 = document.getElementById("Component3");
-    comp1.value="";
-    comp2.value="";
-    comp3.value="";
     var ele = document.getElementsByName('inlineRadioOptions');
+    var select = document.getElementById("select");
+    var reset = document.getElementById("reset");
+    select.hidden="hidden";
+    reset.hidden="";
     function unHide(){
         comp1.hidden="";
         comp2.hidden="";
@@ -20,9 +21,9 @@ function setup(){
 
     switch(theorem){
         case "SSS":
-            comp1.placeholder = "Side 1";
-            comp2.placeholder = "Side 2";
-            comp3.placeholder = "Side 3";
+            comp1.placeholder = "Shortest side";
+            comp2.placeholder = "Middle side";
+            comp3.placeholder = "Longest side";
             unHide();
             break;
 
