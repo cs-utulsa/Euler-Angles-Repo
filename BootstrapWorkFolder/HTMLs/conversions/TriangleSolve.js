@@ -149,6 +149,37 @@ function solve(){
             }
             break;
     }
+
+    const canvas = document.getElementById('canvas');
+
+    const renderer = new THREE.WebGLRenderer( { alpha: true } );
+    renderer.setSize( 800, 800 );
+    container = document.getElementById( 'RenderContainer' );
+    container.appendChild(renderer.domElement);
+    renderer.autoClear = true;
+    renderer.autoClearColor = 'black';
+    container.fillText('Your Text', 150, 50);
+    const scene = new THREE.Scene();
+
+    const camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 1, 1000);
+    camera.position.z = 1;
+
+    const triangleGeometry = new THREE.Geometry();
+    triangleGeometry.vertices.push(new THREE.Vector3(-0.9, -0.9, 0));
+    triangleGeometry.vertices.push(new THREE.Vector3( 0.9, -0.9, 0));
+    triangleGeometry.vertices.push(new THREE.Vector3( 0,    0.9, 0));
+    triangleGeometry.faces.push(new THREE.Face3(0, 1, 2));
+
+    const triangleMaterial = new THREE.MeshBasicMaterial({
+    color: 0x0000FF,
+    side: THREE.DoubleSide
+    });
+
+    const triangleMesh = new THREE.Mesh(triangleGeometry, triangleMaterial);
+
+    scene.add(triangleMesh);
+
+    renderer.render(scene, camera);
 }
 
 function setup(){
@@ -156,6 +187,7 @@ function setup(){
     var comp2 = document.getElementById("Component2");
     var comp3 = document.getElementById("Component3");
     var solve = document.getElementById("solve");
+    var theoremLabel = document.getElementById("theoremLabel");
     var ele = document.getElementsByName('inlineRadioOptions');
     var select = document.getElementById("select");
     var reset = document.getElementById("reset");
@@ -182,6 +214,7 @@ function setup(){
         comp2.hidden="";
         comp3.hidden="";
         solve.hidden="";
+        theoremLabel.hidden="";
     }
     var theorem;
         for(i = 0; i < ele.length; i++) {
@@ -195,6 +228,7 @@ function setup(){
             comp1.placeholder = "Shortest side";
             comp2.placeholder = "Middle side";
             comp3.placeholder = "Longest side";
+            theoremLabel.innerText = "Side-Side-Side Theorem";
             unHide();
             break;
 
@@ -202,6 +236,7 @@ function setup(){
             comp1.placeholder = "Side 1";
             comp2.placeholder = "Angle 3";
             comp3.placeholder = "Side 2";
+            theoremLabel.innerText = "Side-Angle-Side Theorem";
             unHide();
             break;
 
@@ -209,6 +244,7 @@ function setup(){
             comp1.placeholder = "Angle 2";
             comp2.placeholder = "Side 1";
             comp3.placeholder = "Angle 3";
+            theoremLabel.innerText = "Angle-Side-Angle Theorem";
             unHide();
             break;
         
@@ -216,6 +252,7 @@ function setup(){
             comp1.placeholder = "Angle 1";
             comp2.placeholder = "Angle 2";
             comp3.placeholder = "Side 1";
+            theoremLabel.innerText = "Angle-Angle-Side Theorem";
             unHide();
             break;
     }
@@ -230,6 +267,7 @@ function reset(){
     var comp1 = document.getElementById("Component1");
     var comp2 = document.getElementById("Component2");
     var comp3 = document.getElementById("Component3");
+    var theoremLabel = document.getElementById("theoremLabel");
     var option1 = document.getElementById("inlineRadio1");
     var option2 = document.getElementById("inlineRadio2");
     var option3 = document.getElementById("inlineRadio3");
@@ -249,9 +287,11 @@ function reset(){
     AAS.hidden="";
     option1.innerHTML="";
     solve.hidden = "hidden";
-    comp1.hidden="hidden";
-    comp2.hidden="hidden";
-    comp3.hidden="hidden";
+    comp1.hidden = "hidden";
+    comp2.hidden = "hidden";
+    comp3.hidden = "hidden";
+    theoremLabel.hidden = "";
+    theoremLabel.innerText = "Select Theorem";
     comp1.value = "";
     comp2.value = "";
     comp3.value = "";
@@ -259,3 +299,43 @@ function reset(){
     error.hidden = "hidden";
     clearOutput();
 }
+
+function makeTriangle() {
+// Get canvas element
+const canvas = document.getElementById('canvas');
+
+// Create new renderer
+const renderer = new THREE.WebGLRenderer( { alpha: true } );
+renderer.setSize( 800, 800 );
+container = document.getElementById( 'RenderContainer' );
+container.appendChild(renderer.domElement);
+renderer.autoClear = true;
+renderer.autoClearColor = 'black';
+
+// Create new scene
+const scene = new THREE.Scene();
+
+// Create new (orthographic) camera
+const camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 1, 1000);
+camera.position.z = 1;
+
+// Define triangle
+const triangleGeometry = new THREE.Geometry();
+triangleGeometry.vertices.push(new THREE.Vector3(-0.9, -0.9, 0));
+triangleGeometry.vertices.push(new THREE.Vector3( 0.9, -0.9, 0));
+triangleGeometry.vertices.push(new THREE.Vector3( 0,    0.9, 0));
+triangleGeometry.faces.push(new THREE.Face3(0, 1, 2));
+
+const triangleMaterial = new THREE.MeshBasicMaterial({
+  color: 0xFF0000,
+  side: THREE.DoubleSide
+});
+
+const triangleMesh = new THREE.Mesh(triangleGeometry, triangleMaterial);
+
+// Add triangle to scene
+scene.add(triangleMesh);
+
+// Render triangle
+renderer.render(scene, camera);
+  }
