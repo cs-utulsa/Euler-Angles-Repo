@@ -1,31 +1,35 @@
-//max out at 10
-
-var size = 2
+//need to put this file in the html and create the output 
+const calcButton = document.getElementById("calculate");
+calcButton.addEventListener("click", matrix_determinant);
 
 function matrix_determinant(){
 
-
-    switch(size){
-        //if doing a ten by ten, we can't have 100 of these...
-        //listen for an array??
-        case(2):
-        const M11 = document.getElementById("M11")
-        const M12 = document.getElementById("M12")
-        const M21 = document.getElementById("M21")
-        const M22 = document.getElementById("M22")
-        const matrix = math.matrix([0, 1, 2], [4, 5, 6], [7, 8, 9])
+    var matrix_values = document.getElementsByName("matrixValue");
+    //or if this doesn't work, loop through w/ get ElementsByID
+    var num_rows = document.getElementById("userInput").value;
+    var A = math.matrix();
+    A.resize([num_rows, num_rows]);
+    var k = 0;
+    for(i = 0; i < num_rows; i++){
+        for(j = 0; j < num_rows; j++) {
+            A.subset(math.index(i, j), matrix_values[k].value);
+            k++;
+        }
     }
+   
+    const determinant = math.det(A);
 
-    const M11 = document.getElementById("M11")
-    const M12 = document.getElementById("M12")
-    const M13 = document.getElementById("M13")
+    const display = document.getElementById("detSolution");
+    display.innerText = determinant;
+
+    //need to get this output to the html
+
+    // create matrix object?? or class?
     
 
-
-    const determinant = math.det(matrix)
-
-
 }
+
+
 
 
 

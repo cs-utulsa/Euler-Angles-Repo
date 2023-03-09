@@ -16,6 +16,7 @@ function makeGrid() {
         for(let i = 0; i < size; i++) {
             for(let j = 0; j < size; j++) {
                 let node = document.createElement("input");
+                node.setAttribute("name", "matrixValue");
                 node.setAttribute("type", "text");
                 node.setAttribute("id", "in" + i + "_" + j);
                 node.setAttribute("size", 4);
