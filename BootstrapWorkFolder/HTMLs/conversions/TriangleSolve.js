@@ -150,24 +150,28 @@ function solve(){
             break;
     }
 
-    const canvas = document.getElementById('canvas');
-
     const renderer = new THREE.WebGLRenderer( { alpha: true } );
     renderer.setSize( 800, 800 );
+    var a = new THREE.Vector3( 0, 0, 0 );
+    var b = new THREE.Vector3( side1, 0, 0 );
+    var newAngle = 90.0-ang2;
+    var c = new THREE.Vector3( side1-lawOfSin(side2,90.0,newAngle), lawOfSin(side2,90.0,ang3), 0);
+    
+    a.divideScalar(5.0);
+    b.divideScalar(5.0);
+    c.divideScalar(5.0);
     container = document.getElementById( 'RenderContainer' );
     container.appendChild(renderer.domElement);
     renderer.autoClear = true;
     renderer.autoClearColor = 'black';
-    container.fillText('Your Text', 150, 50);
     const scene = new THREE.Scene();
 
     const camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 1, 1000);
     camera.position.z = 1;
-
     const triangleGeometry = new THREE.Geometry();
-    triangleGeometry.vertices.push(new THREE.Vector3(-0.9, -0.9, 0));
-    triangleGeometry.vertices.push(new THREE.Vector3( 0.9, -0.9, 0));
-    triangleGeometry.vertices.push(new THREE.Vector3( 0,    0.9, 0));
+    triangleGeometry.vertices.push(a);
+    triangleGeometry.vertices.push(b);
+    triangleGeometry.vertices.push(c);
     triangleGeometry.faces.push(new THREE.Face3(0, 1, 2));
 
     const triangleMaterial = new THREE.MeshBasicMaterial({
