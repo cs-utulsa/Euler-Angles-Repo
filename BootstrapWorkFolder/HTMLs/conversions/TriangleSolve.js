@@ -61,6 +61,14 @@ function checkAnglesNeg(ang1, ang2, ang3){
         return false;
     }
 }
+function roundUp(numToRound, multiple)
+{
+    var value = multiple;
+    while(value < numToRound) {
+      value = value * multiple;
+    }
+    return value;
+}
 function solve(){
     var side1= 0.0; 
     var side2 = 0.0; 
@@ -150,24 +158,34 @@ function solve(){
             break;
     }
 
-    const canvas = document.getElementById('canvas');
-
     const renderer = new THREE.WebGLRenderer( { alpha: true } );
     renderer.setSize( 800, 800 );
+    var a = new THREE.Vector3( 0, 0, 0 );
+    var b = new THREE.Vector3( side1, 0, 0 );
+    var newAngle = 90.0-ang2;
+    var c;
+    if(ang3==90.0){
+        c = new THREE.Vector3( side1, side2, 0 );
+    }
+    else {
+        c = new THREE.Vector3( side1-lawOfSin(side2,90.0,newAngle), lawOfSin(side2,90.0,ang3), 0);
+    }
+    
+    a.divideScalar(5.0);
+    b.divideScalar(5.0);
+    c.divideScalar(5.0);
     container = document.getElementById( 'RenderContainer' );
     container.appendChild(renderer.domElement);
     renderer.autoClear = true;
     renderer.autoClearColor = 'black';
-    container.fillText('Your Text', 150, 50);
     const scene = new THREE.Scene();
 
     const camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 1, 1000);
     camera.position.z = 1;
-
     const triangleGeometry = new THREE.Geometry();
-    triangleGeometry.vertices.push(new THREE.Vector3(-0.9, -0.9, 0));
-    triangleGeometry.vertices.push(new THREE.Vector3( 0.9, -0.9, 0));
-    triangleGeometry.vertices.push(new THREE.Vector3( 0,    0.9, 0));
+    triangleGeometry.vertices.push(a);
+    triangleGeometry.vertices.push(b);
+    triangleGeometry.vertices.push(c);
     triangleGeometry.faces.push(new THREE.Face3(0, 1, 2));
 
     const triangleMaterial = new THREE.MeshBasicMaterial({
@@ -177,9 +195,57 @@ function solve(){
 
     const triangleMesh = new THREE.Mesh(triangleGeometry, triangleMaterial);
 
-    scene.add(triangleMesh);
+    var canvas = document.createElement('canvas');
+    var context = canvas.getContext('2d');
+    context.font = 50 + "px Arial";
+  
+    metrics = context.measureText("text");
+    console.log(metrics);
+    
+    var textWidth = roundUp(metrics.width+20.0, 2);
+    var textHeight = roundUp(10.0, 2);
+    // document.write("yo");
+    canvas.width = textWidth;
+    canvas.height = textHeight;
+    
+    context.font = "bold " + 10 + "px Arial";
+    context.textAlign = "center";
+    context.textBaseline = "middle";
+    context.fillStyle = "#ff0000";
+    context.fillText("text", textWidth / 2, textHeight / 2);
 
+    var texture = new THREE.Texture(canvas);
+    texture.needsUpdate = true;
+
+    var material = new THREE.MeshBasicMaterial({
+        map: texture,
+        transparent: true,
+        side: THREE.DoubleSide
+        //color: 0xffffff,
+        //useScreenCoordinates: false
+    });
+    
+    
+
+    
+    mesh = new THREE.Mesh(new THREE.PlaneGeometry(textWidth/10, textHeight/20, 10, 10), material);
+    mesh.position.y = 2;
+    mesh.position.z = 0;
+    mesh.position.x = 2;  
+
+    var h = 200;
+    var w = 200;
+
+    // document.write("yo");
+    renderer.setSize(w, h);
+
+    scene.add(mesh);
+
+    
+
+    scene.add(triangleMesh);
     renderer.render(scene, camera);
+
 }
 
 function setup(){
