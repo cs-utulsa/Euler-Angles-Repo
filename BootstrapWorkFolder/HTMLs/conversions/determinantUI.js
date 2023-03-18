@@ -25,5 +25,6 @@ function makeGrid() {
             determinantArea.appendChild(document.createElement("br"));
     
         }
+        
     }
 }
