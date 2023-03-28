@@ -1,7 +1,7 @@
 
 const determinantBox = document.getElementById("determinantArea");
 const calcButton = document.getElementById("calculate");
-calcButton.addEventListener("click", matrix_determinant);
+calcButton.addEventListener("click", matrix_determinant); 
 
 function matrix_determinant(){
     
@@ -22,8 +22,16 @@ function matrix_determinant(){
     
     let output = document.createTextNode("Determinant:   ");
     let num = document.createTextNode(determinant);
+
     determinantBox.appendChild(output);
     determinantBox.appendChild(num);
+
+}
+
+
+
+function matrix_inverse(){
+
 
 
 }
