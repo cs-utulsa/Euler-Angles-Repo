@@ -115,6 +115,42 @@
             <p>While there is a general pattern for calculating the determinant of increasingly larger matrices, we suggest using a calculator to perform this operation.</p>
           </div>
 
+          <div class="container">
+            <strong>Determinant Calculator</strong>
+          </div>
+          <div class="container">
+
+            <p>To begin, please enter a value from 2 to 10 for the size of your matrix:</p>
+            <div class="input-group">
+              <input type="number" min="2" max="10" class="form-control" placeholder="Type Something" aria-label="Type Something" id="userInput" aria-describedby="goButton">
+              <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal" id="goButton">Make Matrix</button>  
+            </div>
+            
+
+            <div class="modal fade" id="exampleModal" tabindex="-1">
+              <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title">Determinant</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="container" id="determinantArea">
+                      <p>Please Enter A Size.</p>
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" required = "required" class="btn btn-primary" id="calculate">Calculate</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="container mt-5">
+            <!-- each other section has top margin of 5 -->
+          </div>
+
           <div class="container mt-5">
             <strong>The Transpose of a Matrix</strong>
             <p>The transpose \(A^{T}\) of a matrix \(A\) is found by switching the rows and columns of that matrix such that it is a flipped form of \(A\). For example, if
@@ -157,5 +193,9 @@
 
     </div>
   </main>
+
+  <script src="./conversions/determinantUI.js"></script>
+  <script src="./conversions/Determinant.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.7.0/math.js"></script>
 </body>
 </html>
