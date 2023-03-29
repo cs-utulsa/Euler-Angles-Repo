@@ -1,3 +1,8 @@
+
+    const calcButton = document.getElementById("VetButton");
+    calcButton.addEventListener("click",setup);
+
+
 function setup(){
     const V1x = document.getElementById("V1xAxisInput");
     const V1y = document.getElementById("V1yAxisInput");
@@ -6,14 +11,14 @@ function setup(){
     const V3x = document.getElementById("V3xAxisInput");
     const V3y = document.getElementById("V3yAxisInput");
 
-    var sidea = Sidea(V1x,V1y,V2x,V2y,V3x,V3y);
-    var sideb = Sideb(V1x,V1y,V2x,V2y,V3x,V3y);
-    var sidec = Sidec(V1x,V1y,V2x,V2y,V3x,V3y);
-    var angAlpha =  angleAlpha(V1x,V1y,V2x,V2y,V3x,V3y);
-    var angleBet = angleBetta(V1x,V1y,V2x,V2y,V3x,V3y);
-    var angleGa = angleGamma(V1x,V1y,V2x,V2y,V3x,V3y);
-    var per = perimeter(sidea,sideb,sidec);
-    var Area = area(V1x,V1y,V2x,V2y,V3x,V3y);
+    const sidea = Sidea(V1x,V1y,V2x,V2y,V3x,V3y);
+    const sideb = Sideb(V1x,V1y,V2x,V2y,V3x,V3y);
+    const sidec = Sidec(V1x,V1y,V2x,V2y,V3x,V3y);
+    const angAlpha =  angleAlpha(V1x,V1y,V2x,V2y,V3x,V3y);
+    const angleBet = angleBetta(V1x,V1y,V2x,V2y,V3x,V3y);
+    const angleGa = angleGamma(V1x,V1y,V2x,V2y,V3x,V3y);
+    const per = perimeter(sidea,sideb,sidec);
+    const Area = area(V1x,V1y,V2x,V2y,V3x,V3y);
 
     
 
@@ -22,66 +27,69 @@ function setup(){
 }
 
 function Sidea(V1x,V1y,V2x,V2y,V3x,V3y){
-    return(math.sqrt(((V3x-V2x)*(V3x-V2x))+((V3y-V2y)*(V3y-V2y))));
+    return(Math.sqrt(((V3x-V2x)*(V3x-V2x))+((V3y-V2y)*(V3y-V2y))));
 }
 function Sideb(V1x,V1y,V2x,V2y,V3x,V3y){
-    return(math.sqrt(((V3x-V1x)*(V3x-V1x))+((V3y-V1y)*(V3y-V1y))));
+    return(Math.sqrt(((V3x-V1x)*(V3x-V1x))+((V3y-V1y)*(V3y-V1y))));
 }
 function Sidec(V1x,V1y,V2x,V2y,V3x,V3y){
-    return( math.sqrt(((V2x-V1x)*(V2x-V1x))+((V2y-V1y)*(V2y-V1y))));    
+    return( Math.sqrt(((V2x-V1x)*(V2x-V1x))+((V2y-V1y)*(V2y-V1y))));    
 }
 
 function perimeter(a,b,c) {
     return(a + b+ c);
 }
 function angleAlpha(V1x,V1y,V2x,V2y,V3x,V3y){
-    var abx = (V2x - V1x);
-    var aby = (V2y - V1y);
-    var acx = (V3x - V1x);
-    var acy = (V3y - V1y);
-    var AbAc = ((abx * acx)+(aby*acy));
-    var AB = math.sqrt((math.pow(abx,2))+(math.pow(aby,2)));
-    var AC = math.sqrt((math.pow(acx,2))+(math.pow(acy,2)));
+    const abx = (V2x - V1x);
+    const aby = (V2y - V1y);
+    const acx = (V3x - V1x);
+    const acy = (V3y - V1y);
+    const AbAc = ((abx * acx)+(aby*acy));
+    const AB = Math.sqrt((Math.pow(abx,2))+(Math.pow(aby,2)));
+    const AC = Math.sqrt((Math.pow(acx,2))+(Math.pow(acy,2)));
 
-    return(math.acos(AbAc/(AB*AC)));
+    return(Math.acos(AbAc/(AB*AC)));
 }
 function angleGamma(V1x,V1y,V2x,V2y,V3x,V3y){
-    var cax = (V1x -V3x);
-    var cay = (V1y -V3y);
-    var cbx = (V2x -V3x);
-    var cby = (V2y -V3y);
-    var cacb = ((cax*cbx)+(cay*cby));
-    var CA = math.sqrt((math.pow(cax,2))+(math.pow(cay,2)));
-    var CB = math.sqrt((math.pow(cbx,2))+(math.pow(cby,2)));
+    const cax = (V1x -V3x);
+    const cay = (V1y -V3y);
+    const cbx = (V2x -V3x);
+    const cby = (V2y -V3y);
+    const cacb = ((cax*cbx)+(cay*cby));
+    const CA = Math.sqrt((Math.pow(cax,2))+(Math.pow(cay,2)));
+    const CB = Math.sqrt((Math.pow(cbx,2))+(Math.pow(cby,2)));
 
-    return(math.acos(cacb/(CA*CB)));
+    return(Math.acos(cacb/(CA*CB)));
 }
 function angleBetta(V1x,V1y,V2x,V2y,V3x,V3y){
 
-    var bax = (V1x -V2x);
-    var bay = (V1y -V2y);
-    var bcx = (V3x -V2x);
-    var bcy = (V3y -V2y);
-    var babc = ((bax*bcx)+(bay*bcy));
-    var BA = math.sqrt((math.pow(bax,2))+(math.pow(bay,2)));
-    var BC = math.sqrt((math.pow(bcx,2))+(math.pow(bcy,2)));
+    const bax = (V1x -V2x);
+    const bay = (V1y -V2y);
+    const bcx = (V3x -V2x);
+    const bcy = (V3y -V2y);
+    const babc = ((bax*bcx)+(bay*bcy));
+    const BA = Math.sqrt((Math.pow(bax,2))+(Math.pow(bay,2)));
+    const BC = Math.sqrt((Math.pow(bcx,2))+(Math.pow(bcy,2)));
 
-    return(math.acos(babc/(BA*BC)));    
+    return(Math.acos(babc/(BA*BC)));    
 
 }
 function area(V1x,V1y,V2x,V2y,V3x,V3y){
-    return(math.abs(1/2(((V1x-V3x)*(V2y-V3y))-((V1y-V3y)*(V2x-V3x)))));
+    return(Math.abs((0.5)*(((V1x-V3x)*(V2y-V3y))-((V1y-V3y)*(V2x-V3x)))));
 }
 
 function  setOuput(sidea,sideb,sidec,angAlpha,angleBet,angleGa,per,Area){
-    document.getElementById("Sidea").innerText = sidea.toFixed(4);
-    document.getElementById("Sideb").innerText = sideb.toFixed(4);
-    document.getElementById("Sidec").innerText = sidec.toFixed(4);
-    document.getElementById("Angle1").innerText = angAlpha.toFixed(4);
-    document.getElementById("Angle2").innerText = angleBet.toFixed(4);
-    document.getElementById("Angle3").innerText = angleGa.toFixed(4);
-    document.getElementById("Perimeter").innerText = per.toFixed(4);
-    document.getElementById("Area").innerText = Area.toFixed(4);
+    
+    
+
+    document.getElementById("Sidea").innerText = sidea;
+    document.getElementById("Sideb").innerText = sideb;
+    document.getElementById("Sidec").innerText = sidec;
+    document.getElementById("Angle1").innerText = angAlpha;
+    document.getElementById("Angle2").innerText = angleBet;
+    document.getElementById("Angle3").innerText = angleGa;
+    document.getElementById("Perimeter").innerText = per;
+    document.getElementById("Area").innerText = Area;
 }
 
 
