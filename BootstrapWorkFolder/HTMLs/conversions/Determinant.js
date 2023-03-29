@@ -1,7 +1,11 @@
 
 const determinantBox = document.getElementById("determinantArea");
 const calcButton = document.getElementById("calculate");
-calcButton.addEventListener("click", matrix_determinant); 
+const closeButton = document.getElementById("closeModal");
+const answerBox = document.getElementById("answerBox");
+closeButton.addEventListener("click", reset);
+calcButton.addEventListener("click", matrix_determinant);
+var calcCount = 0;
 
 function matrix_determinant(){
     
@@ -23,17 +27,26 @@ function matrix_determinant(){
     let output = document.createTextNode("Determinant:   ");
     let num = document.createTextNode(determinant);
 
-    determinantBox.appendChild(output);
-    determinantBox.appendChild(num);
+    if(calcCount > 0) {
+        while(answerBox.firstChild){
+            answerBox.removeChild(answerBox.firstChild);
+        }
+    }
+
+    answerBox.appendChild(output);
+    answerBox.appendChild(num);
+
+    calcCount++;
+
 
 }
 
+function reset() {
+    calcCount = 0;
 
-
-function matrix_inverse(){
-
-
-
+    while(answerBox.firstChild){
+        answerBox.removeChild(answerBox.firstChild);
+    }
 }
 
 
