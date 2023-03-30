@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+<!-- THIS IS QUATERNION TO EULER CONVERSION -->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Convert+ Home</title>
+    <link rel="stylesheet" type="text/css" href="TrigonometryStyles.css?v=anticache.16"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+</head>
+
+
+<body>
+<!--Variables declarations for output-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+<!--navbar-->
+<nav class="navbar fixed-top" style="background-color:#1300B3;">
+    <div class="container-fluid">
+        <a class="navbar-brand mb-1 h1 text-white" href="../whatjacobwanted.html">Convert+</a>
+
+        <button class="navbar-toggler bg-white" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Site Menu</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+
+            <!-- off canvas menu -->
+            <div class="offcanvas-body">
+                <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="../whatjacobwanted.html">Home</a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                           aria-expanded="false">
+                            Converters
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="./EulerAngle.html">Euler to Quaternion</a></li>
+                            <li><a class="dropdown-item" href="./QuaternionAngle.html">Quaternion to Euler</a></li>
+                            <li><a class="dropdown-item" href="./determinantcalc.html">Determinant Calculator</a></li>
+                            <li><a class="dropdown-item" href="./TriangleSolver.html">Triangle Solver</a></li>
+                            <li><a class="dropdown-item" href="./Trigonometry.html">Trigonometry Convert</a></li>
+                            <hr>
+                            <li><a class="dropdown-item" href="../converterhome.html">Converters Home</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                           aria-expanded="false">
+                            Learn
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="../IntroToVectors.html">1. Intro to Vectors</a></li>
+                            <li><a class="dropdown-item" href="../IntroToMatrices.html">2. Intro to Matrices</a></li>
+                            <li><a class="dropdown-item" href="../BasicMatrixOperations.html">3. Basic Matrix
+                                Operations</a></li>
+                            <li><a class="dropdown-item" href="../TraceDetInverse.html">4. The Trace, Determinant, and
+                                Inverse</a></li>
+                            <li><a class="dropdown-item" href="../SpecialTrigIdentities.html">5. Special Trig
+                                Identities</a></li>
+                            <li><a class="dropdown-item" href="../ImaginaryNumbers.html">6. Imaginary Numbers/Complex
+                                Plane</a></li>
+                            <li><a class="dropdown-item" href="../quaternions.html">7. Quaternions</a></li>
+                            <li><a class="dropdown-item" href="../3DRotation.html">8. 3D Rotation</a></li>
+                            <li><a class="dropdown-item" href="../eulertomatrix.html">9. Euler Angles to Rotation
+                                Matrices</a></li>
+                            <li><a class="dropdown-item" href="../matrixtoquaternion.html">10. Rotation Matrices to
+                                Quaternions</a></li>
+                            <li><a class="dropdown-item" href="../helpeulertoquaternion.html">11. Euler Angles to
+                                Quaternions</a></li>
+                            <li><a class="dropdown-item" href="../helpquaterniontoeuler.html">12. Quaternions to Euler
+                                Angles</a></li>
+                            <li><a class="dropdown-item" href="../gimballock.html">13. Euler Angles and Gimbal Lock</a>
+                            </li>
+                            <hr>
+                            <li><a class="dropdown-item" href="../help.html">Lessons Home</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="../about.html">About Us</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="../contactUs.html">Contact Us</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div>
+    <div class="root">
+        <div class="content">
+            <aside class="drawer">
+                <div class="container-fluid card  ">
+                    <div class="py-2 py-xl-5 card-title">
+                        <h1>Trigonometry Convert</h1>
+                    </div>
+
+                    <div class="row">
+                        <h5>state values</h5>
+                        <div class="state-table">
+                            <div class="row state-table-row">
+
+                                <div class="column state-table-column">
+                                    degree <input id="stateDeg" type="text" class="form-control"
+                                                  style="background-color:#d7d5f0;" disabled/>
+                                </div>
+
+                                <div class="column state-table-column">
+                                    radian <input id="stateRad" type="text" class="form-control"
+                                                  style="background-color:#d7d5f0;" disabled/>
+                                </div>
+
+                                <div class="column state-table-column">
+                                    quandrant <input id="stateQua" type="text" class="form-control"
+                                                     style="background-color:#d7d5f0;" disabled/>
+                                </div>
+                            </div>
+
+                            <div class="row state-table-row">
+                                <div class="column state-table-column">
+                                    sinus <input id="stateSin" type="text" class="form-control"
+                                                 style="background-color:#d7d5f0;" disabled/>
+                                </div>
+                                <div class="column state-table-column">
+                                    cosinus <input id="stateCos" type="text" class="form-control"
+                                                   style="background-color:#d7d5f0;" disabled/>
+                                </div>
+                                <div class="column state-table-column">
+                                    tangent <input id="stateTan" type="text" class="form-control"
+                                                   style="background-color:#d7d5f0;" disabled/>
+                                </div>
+                            </div>
+
+
+                            <div class="row state-table-row">
+                                <div class="column state-table-column">
+                                    cotangent <input id="stateCot" type="text" class="form-control"
+                                                     style="background-color:#d7d5f0;" disabled/>
+                                </div>
+                                <div class="column state-table-column">
+                                    secant <input id="stateSec" type="text" class="form-control"
+                                                  style="background-color:#d7d5f0;" disabled/>
+                                </div>
+                                <div class="column state-table-column">
+                                    cosecant <input id="stateCsc" type="text" class="form-control"
+                                                    style="background-color:#d7d5f0;" disabled/>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                    <!-- angle -->
+                    <div class="row">
+                        <h5 id="degreeTitle">angle θ (-)</h5 >
+                        <div class="row zebra">
+                            <div class="column">
+                                <input id="degreeRange" type="range" min="-1" max="361" step="1"/>
+                            </div>
+                            <div class="column">
+                                <input id="degreeInput" type="number" min="-1" max="361" class="form-control"
+                                       style="background-color:#d7d5f0;"/>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <h5 id="radiusTitle">radius scale (-)</h5>
+                        <div class="row zebra">
+                            <div class="column">
+                                <input id="radiusRange" type="range" min="0" max="500" step="5"/>
+                            </div>
+                            <div class="column">
+                                <input id="radiusInput" type="number" min="0" type="text" class="form-control"
+                                       style="background-color:#d7d5f0;"/>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <h5 id="stepTitle">111111</h5>
+                        <div class="row zebra">
+                            <div class="column">
+                                <input id="stepRange" type="range" min="0" max="1" step="0.01"/>
+                            </div>
+                            <div class="column">
+                                <input id="stepInput" type="number" min="0" step="0.01" type="text" class="form-control"
+                                       style="background-color:#d7d5f0;"/>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="column">
+                        <p style="margin-bottom:2.5em"></p>
+                        <button class="btn btn-primary" id="togglePlay" class="button">Stop</button>
+                        <p style="margin-bottom:2.5em"></p>
+                    </div>
+                </div>
+
+            </aside>
+            <div class="canvas-wrapper">
+                <canvas class="canvas" id="canvas"/>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="Trigonometry.js?v=anticache.17"></script>
+<script src="TrigonometryUI.js?v=anticache.16"></script>
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+
+</main>
+</body>
+</html>
