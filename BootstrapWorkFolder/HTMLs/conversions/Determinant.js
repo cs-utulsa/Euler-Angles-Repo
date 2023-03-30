@@ -2,8 +2,10 @@
 const determinantBox = document.getElementById("determinantArea");
 const calcButton = document.getElementById("calculate");
 const closeButton = document.getElementById("closeModal");
+const closeButton2 = document.getElementById("closeModal2");
 const answerBox = document.getElementById("answerBox");
 closeButton.addEventListener("click", reset);
+closeButton2.addEventListener("click", reset);
 calcButton.addEventListener("click", matrix_determinant);
 var calcCount = 0;
 
