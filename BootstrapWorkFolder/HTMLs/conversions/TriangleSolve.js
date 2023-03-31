@@ -194,55 +194,6 @@ function solve(){
     });
 
     const triangleMesh = new THREE.Mesh(triangleGeometry, triangleMaterial);
-
-    var canvas = document.createElement('canvas');
-    var context = canvas.getContext('2d');
-    context.font = 50 + "px Arial";
-  
-    metrics = context.measureText("text");
-    console.log(metrics);
-    
-    var textWidth = roundUp(metrics.width+20.0, 2);
-    var textHeight = roundUp(10.0, 2);
-    // document.write("yo");
-    canvas.width = textWidth;
-    canvas.height = textHeight;
-    
-    context.font = "bold " + 10 + "px Arial";
-    context.textAlign = "center";
-    context.textBaseline = "middle";
-    context.fillStyle = "#ff0000";
-    context.fillText("text", textWidth / 2, textHeight / 2);
-
-    var texture = new THREE.Texture(canvas);
-    texture.needsUpdate = true;
-
-    var material = new THREE.MeshBasicMaterial({
-        map: texture,
-        transparent: true,
-        side: THREE.DoubleSide
-        //color: 0xffffff,
-        //useScreenCoordinates: false
-    });
-    
-    
-
-    
-    mesh = new THREE.Mesh(new THREE.PlaneGeometry(textWidth/10, textHeight/20, 10, 10), material);
-    mesh.position.y = 2;
-    mesh.position.z = 0;
-    mesh.position.x = 2;  
-
-    var h = 200;
-    var w = 200;
-
-    // document.write("yo");
-    renderer.setSize(w, h);
-
-    scene.add(mesh);
-
-    
-
     scene.add(triangleMesh);
     renderer.render(scene, camera);
 
