@@ -54,7 +54,7 @@ function angleAlpha(V1x,V1y,V2x,V2y,V3x,V3y){
     const AB = Math.sqrt((Math.pow(abx,2))+(Math.pow(aby,2)));
     const AC = Math.sqrt((Math.pow(acx,2))+(Math.pow(acy,2)));
 
-    return((Math.acos(AbAc/(AB*AC))).toFixed(2));
+    return(((57.2957795)*(Math.acos(AbAc/(AB*AC)))).toFixed(2));
 }
 function angleGamma(V1x,V1y,V2x,V2y,V3x,V3y){
     const cax = (V1x -V3x);
@@ -65,7 +65,7 @@ function angleGamma(V1x,V1y,V2x,V2y,V3x,V3y){
     const CA = Math.sqrt((Math.pow(cax,2))+(Math.pow(cay,2)));
     const CB = Math.sqrt((Math.pow(cbx,2))+(Math.pow(cby,2)));
 
-    return((Math.acos(cacb/(CA*CB))).toFixed(2));
+    return(((57.2957795)*(Math.acos(cacb/(CA*CB)))).toFixed(2));
 }
 function angleBetta(V1x,V1y,V2x,V2y,V3x,V3y){
 
@@ -77,7 +77,7 @@ function angleBetta(V1x,V1y,V2x,V2y,V3x,V3y){
     const BA = Math.sqrt((Math.pow(bax,2))+(Math.pow(bay,2)));
     const BC = Math.sqrt((Math.pow(bcx,2))+(Math.pow(bcy,2)));
 
-    return((Math.acos(babc/(BA*BC))).toFixed(2));    
+    return(((57.2957795)*(Math.acos(babc/(BA*BC)))).toFixed(2));    
 
 }
 function area(V1x,V1y,V2x,V2y,V3x,V3y){
