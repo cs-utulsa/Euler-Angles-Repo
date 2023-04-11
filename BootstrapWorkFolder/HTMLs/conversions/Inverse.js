@@ -46,20 +46,8 @@ function matrix_inverse(){
     var rows_int = parseInt(num_rows);
     const m = new THREE.Matrix4();
 
-    m.fromArray(matrix_values.values);
+    m.fromArray(Array.from(matrix_values));
 
-    /** 
-    A.resize([rows_int, rows_int]);
-    var k = 0;
-    for(i = 0; i < num_rows; i++){
-        for(j = 0; j < num_rows; j++) {
-            A.subset(math.index(i, j), matrix_values[k].value);
-            k++;
-        }
-    }
-    */
-
-    //if inverse doesn't exist??
     const inverse = m.invert();
     
     let output = document.createTextNode("Inverse:   ");
