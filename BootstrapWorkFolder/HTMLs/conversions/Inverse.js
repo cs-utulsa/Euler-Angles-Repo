@@ -43,28 +43,72 @@ function matrix_inverse(){
     
     var matrix_values = document.getElementsByName("matrixValue");
     var num_rows = document.getElementById("userInput").value;
+
+
+    var rows_int = parseInt(num_rows);
+    var A = math.matrix();
+    A.resize([rows_int, rows_int]);
+    var k = 0;
+    for(i = 0; i < num_rows; i++){
+        for(j = 0; j < num_rows; j++) {
+            A.subset(math.index(i, j), matrix_values[k].value);
+            k++;
+        }
+    }
+
+    /** 
     var rows_int = parseInt(num_rows);
     const m = new THREE.Matrix4();
 
     m.fromArray(Array.from(matrix_values));
 
     var inverse = m.getInverse(m);
-    
-    let output = document.createTextNode("Inverse:   ");
-    let finishedMatrix = inverse.elements;
-    let num = document.createTextNode(finishedMatrix);
+    */
 
-    if(calcCount > 0) {
-        while(answerBox.firstChild){
-            answerBox.removeChild(answerBox.firstChild);
+    //check det first
+    const determinant = math.det(A);
+    let output, num;
+    if(determinant == 0){
+        output = document.createTextNode("Inverse does not exist.  ");
+        num = document.createTextNode("Determinant = 0.");
+
+
+        if(calcCount > 0) {
+            while(answerBox.firstChild){
+                answerBox.removeChild(answerBox.firstChild);
+            }
         }
+    
+        answerBox.appendChild(output);
+        answerBox.appendChild(num);
+    
+        calcCount++;
+    
+
+
+    } else {
+        output = document.createTextNode("Inverse:   ");
+        let invertedMatrix = math.inv(A);
+        num = document.createTextNode(invertedMatrix);
+
+
+
+        if(calcCount > 0) {
+            while(answerBox.firstChild){
+                answerBox.removeChild(answerBox.firstChild);
+            }
+        }
+    
+        answerBox.appendChild(output);
+        answerBox.appendChild(num);
+    
+        calcCount++;
+    
+
     }
 
-    answerBox.appendChild(output);
-    answerBox.appendChild(num);
 
-    calcCount++;
-
+    
 
 }
 
