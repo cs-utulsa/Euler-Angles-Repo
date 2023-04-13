@@ -48,10 +48,11 @@ function matrix_inverse(){
 
     m.fromArray(Array.from(matrix_values));
 
-    const inverse = m.invert();
+    var inverse = m.getInverse(m);
     
     let output = document.createTextNode("Inverse:   ");
-    let num = document.createTextNode(inverse);
+    let finishedMatrix = inverse.elements;
+    let num = document.createTextNode(finishedMatrix);
 
     if(calcCount > 0) {
         while(answerBox.firstChild){
