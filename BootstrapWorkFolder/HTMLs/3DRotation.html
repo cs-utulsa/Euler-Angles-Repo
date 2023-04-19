@@ -98,7 +98,7 @@
             <h1>3D Rotation</h1>
           </div>
           <div class="container">
-            <p>Lesson coming soon! Be sure to check out our other lessons in the meantime.</p>
+            <p>When an object is rotated in space, there are different ways to represent the rotation. One representation is through a three-by-three rotation matrix. See the tab below on rotation matrices for more information about this specific representation. A matrix can express the way an object is rotated about three axes, which leads to another type of representation of 3D rotation – Euler Angles. Each axis is associated with an angle that describes the object’s rotation. While Euler Angles can appear to be the easiest way to represent the rotation of an object in 3D space, there is a problem that arises with specific rotations called “Gimbal Lock” that limits the use of Euler Angles. For this reason, it can be helpful to describe 3D rotation in another way, which is where quaternions come into use. A quaternion can express a rotation when its norm, \(|q|=\sqrt{q^2_{0}+q^2_{1}+q^2_{2}+q^2_{3}}\) is equal to 1. In order to find the coordinate point, \(Y\), of an object after it has been rotated from its previous point, \(X\), the following equation is given: \[q_{Y}=q_{A}q_{X}q^*_{A}\] In this equation, \(q_{A}\)  is the rotation, \(q_{A}^*\) is its conjugate, and both \(q_{X}\) and \(q_{Y}\) are vectors expressed as quaternions with no real part. Euler Angles and rotation matrices both can be converted to quaternions. However, these conversion methods come with their own set of challenges which are described in further detail in the lessons to follow.</p>
           </div>
           <div class="container mt-5">
             <a href="quaternions.html"><button class="btn btn-primary me-md-2" type="button" style="background-color:#1300B3;">Previous Lesson</button></a>
@@ -111,7 +111,6 @@
           <div class="container">
 
           </div>
-          <hr>
           <p class="lead">Have any feedback? Any issues? Email us at tuconvertplus@gmail.com.</p>
         </div>
 

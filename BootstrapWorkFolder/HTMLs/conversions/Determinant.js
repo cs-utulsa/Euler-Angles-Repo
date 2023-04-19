@@ -1,11 +1,10 @@
 
 const determinantBox = document.getElementById("determinantArea");
-const calcButton = document.getElementById("calculate");
+//const calcButton = document.getElementById("calculate"); //already declared in determinantUI.js
 const closeButton = document.getElementById("closeModal");
 const closeButton2 = document.getElementById("closeModal2");
 const answerBox = document.getElementById("answerBox");
 closeButton.addEventListener("click", reset);
-closeButton2.addEventListener("click", reset);
 calcButton.addEventListener("click", matrix_determinant);
 var calcCount = 0;
 
@@ -46,8 +45,13 @@ function matrix_determinant(){
 function reset() {
     calcCount = 0;
 
+    calcButton.style.display = 'none';
+
     while(answerBox.firstChild){
         answerBox.removeChild(answerBox.firstChild);
+    }
+    while(determinantBox.firstChild) {
+        determinantBox.removeChild(determinantBox.firstChild);
     }
 }
 

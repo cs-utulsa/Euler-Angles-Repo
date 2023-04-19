@@ -99,8 +99,23 @@
             <h1>Euler Angles and Gimbal Lock</h1>
           </div>
           <div class="container">
-            <p>Lesson coming soon! Be sure to check out our other lessons in the meantime.</p>
+            <p>In the process of learning about quaternions and their use, it is especially helpful to understand why there is a need for quaternions within 3D rotation. Euler angles are, after all, much easier to conceptualize, but the issue with relying on Euler angles solely for representing orientation lies with an issue known as Gimbal Lock. </p>
           </div>
+
+          <div class="container mt-5">
+            <p>The following image shows how three rings would rotate around the three different axes. There is no issue currently in the way they are positioned.</p>
+            <img src="../Assets/Gimbal1.png">
+          </div>
+
+          <div class="container mt-5">
+            <p>However, in this second image, two of the rings are aligned and a degree of freedom has been lost, which means that Gimbal Lock has occurred.</p>
+            <img src="../Assets/Gimbal2.png">
+          </div>
+
+          <div class="container mt-5">
+            <p>When Gimbal Lock occurs, two axes apply the same rotation, and the system becomes locked in two-dimensional space. A system can become disoriented and unable to break from it without outside help.</p>
+          </div>
+
           <div class="container mt-5">
             <a href="helpquaterniontoeuler.html"><button class="btn btn-primary me-md-2" type="button" style="background-color:#1300B3;">Previous Lesson</button></a>
           </div>
@@ -109,7 +124,9 @@
         <!-- 1/3 column -->
         <div class="col-4">
           <div class="container">
-
+            <h3>References and Additional Resources</h3>
+            <p><a target="_blank" href="https://www.allaboutcircuits.com/technical-articles/dont-get-lost-in-deep-space-understanding-quaternions/">Understanding Quaternions: Deep Space</a></p>
+            <p><a target="_blank" href="https://en.wikipedia.org/wiki/Gimbal_lock">Wikipedia</a></p>
           </div>
           <hr>
           <p class="lead">Have any feedback? Any issues? Email us at tuconvertplus@gmail.com.</p>
