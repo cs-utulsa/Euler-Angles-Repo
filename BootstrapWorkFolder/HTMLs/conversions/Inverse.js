@@ -14,6 +14,7 @@ function makeGrid() {
     if(size < 2 || size > 10) {
         inverseArea.innerHTML = "Please Enter A Valid Size.";
     } else {
+        calcButton.style.display = "initial";
         for(let i = 0; i < size; i++) {
             for(let j = 0; j < size; j++) {
                 let node = document.createElement("input");
@@ -128,7 +129,13 @@ function matrix_inverse(){
 function reset() {
     calcCount = 0;
 
+    calcButton.style.display = 'none';
+
     while(answerBox.firstChild){
         answerBox.removeChild(answerBox.firstChild);
+    }
+
+    while(inverseArea.firstChild) {
+        inverseArea.removeChild(inverseArea.firstChild);
     }
 }
