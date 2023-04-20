@@ -86,7 +86,12 @@ function solve(){
             theorem = ele[i].value;
         }
     var error = document.getElementById("errorLabel");
-
+    var firstAngle;
+    var secondAngle;
+    var thirdAngle;
+    var firstSide;
+    var secondSide;
+    var thirdSide;
 
     switch(theorem){
         case "SSS":
@@ -107,12 +112,88 @@ function solve(){
             break;
 
         case "SAS":
-            side1 = parseFloat(comp1.value);
-            ang3 = parseFloat(comp2.value);
-            side2 = parseFloat(comp3.value);
-            side3 = lawOfCos(side1, ang3, side2);
-            ang2 = lawOfCosSides(side1, side3, side2);
-            ang1 = 180.0 - ang2 - ang3;
+
+            firstSide = parseFloat(comp1.value);
+            firstAngle = parseFloat(comp2.value);
+            secondSide = parseFloat(comp3.value);
+            thirdSide = lawOfCos(firstSide, firstAngle, secondSide);
+            secondAngle = lawOfCosSides(firstSide, secondSide, thirdSide);
+            thirdAngle = 180.0 - firstAngle - secondAngle;
+
+            if(firstAngle<secondAngle && firstAngle<thirdAngle){
+                ang1 = firstAngle;
+                if(secondAngle<thirdAngle){
+                    ang2 = secondAngle;
+                    ang3 = thirdAngle;
+                }
+                else{
+                    ang3 = secondAngle;
+                    ang2 = thirdAngle;
+                }
+            }
+
+            else if(secondAngle<firstAngle && secondAngle<thirdAngle){
+                ang1 = secondAngle;
+                if(firstAngle<thirdAngle){
+                    ang2 = firstAngle;
+                    ang3 = thirdAngle;
+                }
+                else{
+                    ang3 = firstAngle;
+                    ang2 = thirdAngle;
+                }
+            }
+
+            else{
+                ang1 = thirdAngle;
+                if(firstAngle<secondAngle){
+                    ang2 = firstAngle;
+                    ang3 = secondAngle;
+                }
+                else{
+                    ang3 = firstAngle;
+                    ang2 = secondAngle;
+                }
+            }
+            //sides
+            if(firstSide<secondSide && firstSide<thirdSide){
+                side1 = firstSide;
+                if(secondSide<thirdSide){
+                    side2 = secondSide;
+                    side3 = thirdSide;
+                }
+                else{
+                    side3 = secondSide;
+                    side2 = thirdSide;
+                }
+            }
+
+            else if(secondSide<firstSide && secondSide<thirdSide){
+                side1 = secondSide;
+                if(firstSide<thirdSide){
+                    side2 = firstSide;
+                    side3 = thirdSide;
+                }
+                else{
+                    side3 = firstSide;
+                    side2 = thirdSide;
+                }
+            }
+
+            else{
+                side1 = thirdSide;
+                if(firstSide<secondSide){
+                    side2 = firstSide;
+                    side3 = secondSide;
+                }
+                else{
+                    side3 = firstSide;
+                    side2 = secondSide;
+                }
+            }
+
+
+
             if(checkDimensions(side1, side2, side3) || checkAnglesNeg(ang1, ang2, ang3) || checkSidesNeg(side1, side2, side3)){
                 error.hidden="";
                 clearOutput();
@@ -124,13 +205,95 @@ function solve(){
             break;
 
         case "ASA":
-            ang2 = parseFloat(comp1.value);
-            side1 = parseFloat(comp2.value);
-            ang3 = parseFloat(comp3.value);
-            ang1 = 180.0 - ang2 - ang3;
-            side2 = lawOfSin(side1, ang1, ang2);
-            side3 = lawOfSin(side1, ang1, ang3);
-            if(checkDimensions(side1, side2, side3) || checkAnglesNeg(ang1, ang2, ang3) || checkSidesNeg(side1, side2, side3)){
+            firstAngle = parseFloat(comp1.value);
+            firstSide = parseFloat(comp2.value);
+            secondAngle = parseFloat(comp3.value);
+            thirdAngle = 180.0 - firstAngle - secondAngle;
+            secondSide = lawOfSin(firstSide, thirdAngle, firstAngle);
+            thirdSide = lawOfSin(firstSide, thirdAngle, secondAngle);
+            if(firstAngle<secondAngle && firstAngle<thirdAngle){
+                ang1 = firstAngle;
+                if(secondAngle<thirdAngle){
+                    ang2 = secondAngle;
+                    ang3 = thirdAngle;
+                }
+                else{
+                    ang3 = secondAngle;
+                    ang2 = thirdAngle;
+                }
+            }
+
+            else if(secondAngle<firstAngle && secondAngle<thirdAngle){
+                ang1 = secondAngle;
+                if(firstAngle<thirdAngle){
+                    ang2 = firstAngle;
+                    ang3 = thirdAngle;
+                }
+                else{
+                    ang3 = firstAngle;
+                    ang2 = thirdAngle;
+                }
+            }
+
+            else{
+                ang1 = thirdAngle;
+                if(firstAngle<secondAngle){
+                    ang2 = firstAngle;
+                    ang3 = secondAngle;
+                }
+                else{
+                    ang3 = firstAngle;
+                    ang2 = secondAngle;
+                }
+            }
+            //sides
+            if(firstSide<secondSide && firstSide<thirdSide){
+                side1 = firstSide;
+                if(secondSide<thirdSide){
+                    side2 = secondSide;
+                    side3 = thirdSide;
+                }
+                else{
+                    side3 = secondSide;
+                    side2 = thirdSide;
+                }
+            }
+
+            else if(secondSide<firstSide && secondSide<thirdSide){
+                side1 = secondSide;
+                if(firstSide<thirdSide){
+                    side2 = firstSide;
+                    side3 = thirdSide;
+                }
+                else{
+                    side3 = firstSide;
+                    side2 = thirdSide;
+                }
+            }
+
+            else{
+                side1 = thirdSide;
+                if(firstSide<secondSide){
+                    side2 = firstSide;
+                    side3 = secondSide;
+                }
+                else{
+                    side3 = firstSide;
+                    side2 = secondSide;
+                }
+            }
+
+
+
+            if(checkDimensions(side1, side2, side3)){
+                error.hidden="";
+                clearOutput();
+            }
+            else if(checkAnglesNeg(ang1, ang2, ang3)){
+                error.hidden="";
+                clearOutput();
+            }
+            else if(checkSidesNeg(side1, side2, side3)){
                 error.hidden="";
                 clearOutput();
             }
@@ -141,12 +304,85 @@ function solve(){
             break;
         
         case "AAS":
-            ang1 = parseFloat(comp1.value);
-            ang2 = parseFloat(comp2.value);
-            side1 = parseFloat(comp3.value);
-            ang3 = 180.0 - ang1 - ang2;
-            side2 = lawOfSin(side1, ang1, ang2);
-            side3 = lawOfSin(side1, ang1, ang3);
+            firstAngle = parseFloat(comp1.value);
+            secondAngle = parseFloat(comp2.value);
+            firstSide = parseFloat(comp3.value);
+            thirdAngle = 180.0 - firstAngle - secondAngle;
+            secondSide = lawOfSin(firstSide, firstAngle, secondAngle);
+            thirdSide = lawOfSin(firstSide, firstAngle, thirdAngle);
+            if(firstAngle<secondAngle && firstAngle<thirdAngle){
+                ang1 = firstAngle;
+                if(secondAngle<thirdAngle){
+                    ang2 = secondAngle;
+                    ang3 = thirdAngle;
+                }
+                else{
+                    ang3 = secondAngle;
+                    ang2 = thirdAngle;
+                }
+            }
+
+            else if(secondAngle<firstAngle && secondAngle<thirdAngle){
+                ang1 = secondAngle;
+                if(firstAngle<thirdAngle){
+                    ang2 = firstAngle;
+                    ang3 = thirdAngle;
+                }
+                else{
+                    ang3 = firstAngle;
+                    ang2 = thirdAngle;
+                }
+            }
+
+            else{
+                ang1 = thirdAngle;
+                if(firstAngle<secondAngle){
+                    ang2 = firstAngle;
+                    ang3 = secondAngle;
+                }
+                else{
+                    ang3 = firstAngle;
+                    ang2 = secondAngle;
+                }
+            }
+            //sides
+            if(firstSide<secondSide && firstSide<thirdSide){
+                side1 = firstSide;
+                if(secondSide<thirdSide){
+                    side2 = secondSide;
+                    side3 = thirdSide;
+                }
+                else{
+                    side3 = secondSide;
+                    side2 = thirdSide;
+                }
+            }
+
+            else if(secondSide<firstSide && secondSide<thirdSide){
+                side1 = secondSide;
+                if(firstSide<thirdSide){
+                    side2 = firstSide;
+                    side3 = thirdSide;
+                }
+                else{
+                    side3 = firstSide;
+                    side2 = thirdSide;
+                }
+            }
+
+            else{
+                side1 = thirdSide;
+                if(firstSide<secondSide){
+                    side2 = firstSide;
+                    side3 = secondSide;
+                }
+                else{
+                    side3 = firstSide;
+                    side2 = secondSide;
+                }
+            }
+            
+
             if(checkDimensions(side1, side2, side3) || checkAnglesNeg(ang1, ang2, ang3) || checkSidesNeg(side1, side2, side3)){
                 error.hidden="";
                 clearOutput();
@@ -157,23 +393,33 @@ function solve(){
             }
             break;
     }
+    var ang1Dim = ang1;
+    var ang2Dim = ang2;
+    var ang3Dim = ang3;
+    var side1Dim = side1;
+    var side2Dim = side2;
+    var side3Dim = side3;
 
+    while(side1Dim > 3.0 || side2Dim > 3.0 || side3Dim > 3.0){
+        side1Dim = side1Dim / 10.0;
+        side2Dim = side2Dim / 10.0;
+        side3Dim = side3Dim / 10.0;
+    }
+
+    // document.write(side1Dim + " " + side2Dim + " " + side3Dim);
     const renderer = new THREE.WebGLRenderer( { alpha: true } );
     renderer.setSize( 800, 800 );
     var a = new THREE.Vector3( 0, 0, 0 );
-    var b = new THREE.Vector3( side1, 0, 0 );
-    var newAngle = 90.0-ang2;
+    var b = new THREE.Vector3( side1Dim, 0, 0 );
+    var newAngle = 90.0-ang2Dim;
     var c;
     if(ang3==90.0){
-        c = new THREE.Vector3( side1, side2, 0 );
+        c = new THREE.Vector3( side1Dim, side2Dim, 0 );
     }
     else {
-        c = new THREE.Vector3( side1-lawOfSin(side2,90.0,newAngle), lawOfSin(side2,90.0,ang3), 0);
+        c = new THREE.Vector3( side1Dim-lawOfSin(side2Dim,90.0,newAngle), lawOfSin(side2Dim,90.0,ang3Dim), 0);
     }
-    
-    a.divideScalar(5.0);
-    b.divideScalar(5.0);
-    c.divideScalar(5.0);
+    // document.write(b.x + " " + b.y + " " + b.z);
     container = document.getElementById( 'RenderContainer' );
     container.appendChild(renderer.domElement);
     renderer.autoClear = true;
@@ -250,25 +496,25 @@ function setup(){
             break;
 
         case "SAS":
-            comp1.placeholder = "Side 1";
-            comp2.placeholder = "Angle 3";
-            comp3.placeholder = "Side 2";
+            comp1.placeholder = "Side";
+            comp2.placeholder = "Angle";
+            comp3.placeholder = "Side";
             theoremLabel.innerText = "Side-Angle-Side Theorem";
             unHide();
             break;
 
         case "ASA":
-            comp1.placeholder = "Angle 2";
-            comp2.placeholder = "Side 1";
-            comp3.placeholder = "Angle 3";
+            comp1.placeholder = "Angle";
+            comp2.placeholder = "Side";
+            comp3.placeholder = "Angle";
             theoremLabel.innerText = "Angle-Side-Angle Theorem";
             unHide();
             break;
         
         case "AAS":
-            comp1.placeholder = "Angle 1";
-            comp2.placeholder = "Angle 2";
-            comp3.placeholder = "Side 1";
+            comp1.placeholder = "Angle";
+            comp2.placeholder = "Angle";
+            comp3.placeholder = "Side";
             theoremLabel.innerText = "Angle-Angle-Side Theorem";
             unHide();
             break;
@@ -317,42 +563,4 @@ function reset(){
     clearOutput();
 }
 
-function makeTriangle() {
-// Get canvas element
-const canvas = document.getElementById('canvas');
 
-// Create new renderer
-const renderer = new THREE.WebGLRenderer( { alpha: true } );
-renderer.setSize( 800, 800 );
-container = document.getElementById( 'RenderContainer' );
-container.appendChild(renderer.domElement);
-renderer.autoClear = true;
-renderer.autoClearColor = 'black';
-
-// Create new scene
-const scene = new THREE.Scene();
-
-// Create new (orthographic) camera
-const camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 1, 1000);
-camera.position.z = 1;
-
-// Define triangle
-const triangleGeometry = new THREE.Geometry();
-triangleGeometry.vertices.push(new THREE.Vector3(-0.9, -0.9, 0));
-triangleGeometry.vertices.push(new THREE.Vector3( 0.9, -0.9, 0));
-triangleGeometry.vertices.push(new THREE.Vector3( 0,    0.9, 0));
-triangleGeometry.faces.push(new THREE.Face3(0, 1, 2));
-
-const triangleMaterial = new THREE.MeshBasicMaterial({
-  color: 0xFF0000,
-  side: THREE.DoubleSide
-});
-
-const triangleMesh = new THREE.Mesh(triangleGeometry, triangleMaterial);
-
-// Add triangle to scene
-scene.add(triangleMesh);
-
-// Render triangle
-renderer.render(scene, camera);
-  }
